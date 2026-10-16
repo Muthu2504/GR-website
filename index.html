@@ -46,8 +46,9 @@ h1,h2,h3{font-family:var(--head);font-weight:700;letter-spacing:-.02em;line-heig
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--body);font-weight:600;font-size:17px;padding:15px 24px;border-radius:14px;border:2px solid transparent;cursor:pointer;transition:transform .15s ease,box-shadow .2s ease,background .2s ease,color .2s;white-space:nowrap}
 .btn:active{transform:scale(.98)}
 .btn svg{width:22px;height:22px;flex:none}
-.btn-wa{background:var(--wa);color:#04260F;box-shadow:0 8px 22px -8px rgba(37,211,102,.7)}
-.btn-wa:hover{background:var(--wa-d);transform:translateY(-2px)}
+.btn-wa{background:var(--ink);color:#fff;box-shadow:0 8px 22px -10px rgba(23,21,27,.55)}
+.btn-wa svg{color:var(--wa)}
+.btn-wa:hover{background:#2B2731;transform:translateY(-2px)}
 .btn-call{background:#fff;color:var(--ink);border-color:#E4DBD9}
 .btn-call:hover{background:var(--ink);color:#fff;border-color:var(--ink);transform:translateY(-2px)}
 .btn-lg{padding:18px 28px;font-size:18px}
@@ -195,8 +196,8 @@ h1,h2,h3{font-family:var(--head);font-weight:700;letter-spacing:-.02em;line-heig
 .c-card small{display:block;font-size:15px;font-weight:500}
 .c-card b{display:block;font-family:var(--head);font-size:clamp(26px,3.4vw,38px);letter-spacing:-.01em;line-height:1.15}
 .c-card em{font-style:normal;font-size:15px;font-weight:600;display:inline-flex;gap:6px;align-items:center;margin-top:4px}
-.c-wa{background:var(--wa);color:#04260F;box-shadow:0 20px 40px -20px rgba(37,211,102,.8)}
-.c-wa .ic{background:rgba(4,38,15,.12)}
+.c-wa{background:#332E3A;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+.c-wa .ic{background:rgba(37,211,102,.16);color:var(--wa)}
 .c-call{background:#fff;color:var(--ink)}
 .c-call .ic{background:var(--tint);color:var(--brand-d)}
 .c-call small{color:var(--mut)}
@@ -220,6 +221,7 @@ footer .logo img{height:32px}
   .nav-links{display:none}
   .hero{padding:112px 0 56px}
   .hero-grid{grid-template-columns:1fr}
+  .hero-art{order:-1}
   .hero-art{min-height:340px;margin-top:8px}
   .hero-art img{height:310px}
   .chip{font-size:13px;padding:8px 12px 8px 8px}.chip i{width:26px;height:26px}.chip svg{width:15px;height:15px}
@@ -251,7 +253,7 @@ footer .logo img{height:32px}
   .bar{display:grid;grid-template-columns:1fr 1.3fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,251,250,.96);backdrop-filter:blur(12px);box-shadow:0 -8px 24px -12px rgba(60,20,15,.3);transform:translateY(110%);transition:transform .3s}
   .bar.show{transform:none}
   .bar .btn{padding:14px 10px;font-size:16px;border-radius:12px}
-  .bar .btn-call{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .bar .btn-call{background:#fff;color:var(--ink);border-color:var(--line)}
   .c-card{padding:20px}.c-card .ic{width:52px;height:52px}
 }
 @media(prefers-reduced-motion:reduce){
