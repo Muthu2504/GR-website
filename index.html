@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Funnel+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"Groods","description":"Delivery service for food, parcels, medicines and groceries in Tirupur.","telephone":"+919092162170","address":{"@type":"PostalAddress","streetAddress":"30, 4th St Stanes Rd, KNP Puram, Odakkadu","addressLocality":"Tiruppur","addressRegion":"Tamil Nadu","postalCode":"641602","addressCountry":"IN"},"areaServed":"Tirupur, Tamil Nadu, India","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","reviewCount":"91","bestRating":"5"}}
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Groods","description":"Delivery service for food, parcels, medicines and groceries in Tirupur.","telephone":"+919092162170","areaServed":"Tirupur, Tamil Nadu, India","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","reviewCount":"91","bestRating":"5"}}
 </script>
 <style>
 :root{
@@ -206,7 +206,6 @@ footer{background:#0F0D13;color:rgba(255,255,255,.8);padding:36px 0 40px;font-si
 .foot{display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,.14);padding-top:28px}
 footer .logo img{height:32px}
 .foot nav{display:flex;gap:22px;flex-wrap:wrap}.foot nav a:hover{color:#fff;text-decoration:underline;text-decoration-color:var(--brand)}
-.foot-addr{width:100%;font-size:14px;color:rgba(255,255,255,.65)}
 
 /* sticky mobile bar */
 .bar{display:none}
@@ -236,7 +235,8 @@ footer .logo img{height:32px}
   .sec{padding:64px 0}
 }
 @media(max-width:620px){
-  body{font-size:16px;padding-bottom:84px}
+  body{font-size:16px}
+  footer{padding-bottom:calc(40px + 72px)}
   .cards{grid-template-columns:1fr}.card.more{grid-column:auto}.card{min-height:230px}
   .card p{max-width:60%}.card .art{height:62%}
   .nav .wrap{height:64px}
@@ -473,7 +473,6 @@ footer .logo img{height:32px}
       <a class="logo" href="#top" aria-label="Groods home"><img src="assets/groods-logo.svg" alt="Groods" width="108" height="36"></a>
       <nav aria-label="Footer"><a href="#what">What we do</a><a href="#reviews">Reviews</a><a href="#about">About us</a><a href="#apps">App</a><a href="#contact">Contact</a></nav>
       <span>© <span id="yr">2026</span> Groods. Tirupur.</span>
-      <p class="foot-addr">Groods, 30, 4th St Stanes Rd, KNP Puram, Odakkadu, Tiruppur, Tamil Nadu 641602  ·  <a href="tel:+919092162170">90 921 621 70</a></p>
     </div>
   </div>
 </footer>
