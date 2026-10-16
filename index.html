@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Groods – Food, parcels, medicines &amp; groceries delivered in Tirupur</title>
+<meta name="description" content="Groods delivers food, parcels, medicines, groceries and more to your door in Tirupur. Order on WhatsApp or call 90 921 621 70. Mobile apps coming soon.">
+<meta name="theme-color" content="#F45146">
+<link rel="icon" href="favicon.svg?v=4" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Groods – Whatever you need, we bring it home">
+<meta property="og:description" content="Food, parcels, medicines, groceries and more, delivered in Tirupur. Order on WhatsApp or call 90 921 621 70.">
+<meta property="og:image" content="assets/mascot-thumbs.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Funnel+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Groods","description":"Delivery service for food, parcels, medicines and groceries in Tirupur.","telephone":"+919092162170","address":{"@type":"PostalAddress","streetAddress":"30, 4th St Stanes Rd, KNP Puram, Odakkadu","addressLocality":"Tiruppur","addressRegion":"Tamil Nadu","postalCode":"641602","addressCountry":"IN"},"areaServed":"Tirupur, Tamil Nadu, India","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","reviewCount":"91","bestRating":"5"}}
+</script>
+<style>
+:root{
+  --brand:#F45146; --brand-d:#D4382E; --tint:#FFF1EF; --tint2:#FFE2DE;
+  --dark:#1E1B22; --dark2:#15131A;
+  --wa:#25D366; --wa-d:#1EBE5A; --ink:#17151B; --mut:#625F69; --line:#EFE7E5; --bg:#FFFBFA; --card:#fff;
+  --r:20px; --max:1160px;
+  --head:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --body:'Funnel Sans','Segoe UI',system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--body);color:var(--ink);background:var(--bg);line-height:1.55;font-size:17px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid rgba(244,81,70,.55);outline-offset:3px;border-radius:10px}
+.wrap{width:min(var(--max),100% - 40px);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;color:var(--ink);padding:10px 14px;border-radius:10px;z-index:100}
+.skip:focus{left:12px}
+h1,h2,h3{font-family:var(--head);font-weight:700;letter-spacing:-.02em;line-height:1.1}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--brand-d);background:var(--tint);padding:7px 14px;border-radius:99px}
+.sec{padding:88px 0}
+.sec-head{max-width:620px;margin-bottom:40px}
+.sec-head h2{font-size:clamp(30px,4.2vw,44px);margin:14px 0 12px}
+.sec-head p{color:var(--mut);font-size:18px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--body);font-weight:600;font-size:17px;padding:15px 24px;border-radius:14px;border:2px solid transparent;cursor:pointer;transition:transform .15s ease,box-shadow .2s ease,background .2s ease,color .2s;white-space:nowrap}
+.btn:active{transform:scale(.98)}
+.btn svg{width:22px;height:22px;flex:none}
+.btn-wa{background:var(--wa);color:#04260F;box-shadow:0 8px 22px -8px rgba(37,211,102,.7)}
+.btn-wa:hover{background:var(--wa-d);transform:translateY(-2px)}
+.btn-call{background:#fff;color:var(--ink);border-color:#E4DBD9}
+.btn-call:hover{background:var(--ink);color:#fff;border-color:var(--ink);transform:translateY(-2px)}
+.btn-lg{padding:18px 28px;font-size:18px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;transition:background .25s,box-shadow .25s}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.nav.solid{background:rgba(255,251,250,.92);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+.logo{display:flex;align-items:center}
+.logo img{height:36px;width:auto}
+.nav-links{display:flex;gap:30px;font-weight:500;font-size:16px;color:var(--ink)}
+.nav-links a{position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;border-radius:2px;background:var(--brand);transform:scaleX(0);transition:transform .2s}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{display:flex;gap:10px;align-items:center;flex:none}
+.nav-cta .btn{padding:10px 18px;font-size:15px;border-radius:12px;height:44px}
+.t-short{display:none}
+
+/* hero */
+.hero{position:relative;margin-top:-72px;padding:128px 0 88px;overflow:hidden;
+  background:radial-gradient(760px 480px at 82% 38%,#FFD9D4 0%,rgba(255,217,212,0) 65%),linear-gradient(180deg,#FFF1EE 0%,#FFFBFA 100%)}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(244,81,70,.16) 1.2px,transparent 1.4px);background-size:26px 26px;mask-image:linear-gradient(90deg,transparent 45%,#000 100%);-webkit-mask-image:linear-gradient(90deg,transparent 45%,#000 100%)}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
+.pulse{width:8px;height:8px;border-radius:50%;background:#22C55E;box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+.hero .eyebrow{background:#fff;color:var(--ink);box-shadow:0 4px 14px -6px rgba(244,81,70,.4)}
+.hero h1{font-size:clamp(40px,6vw,72px);margin:20px 0 18px}
+.hero h1 em{font-style:normal;color:var(--brand)}
+.hero p.lead{font-size:clamp(18px,2vw,21px);color:var(--mut);max-width:520px}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin:32px 0 20px}
+.hero-rate{display:inline-flex;align-items:center;gap:10px;color:var(--ink);font-size:15px;font-weight:500}
+.hero-rate .stars{color:#F5A623;letter-spacing:2px;font-size:16px}
+.hero-rate:hover b{text-decoration:underline}
+.hero-art{position:relative;display:grid;place-items:center;min-height:460px}
+.hero-art::before{content:"";position:absolute;width:min(430px,92%);aspect-ratio:1;border-radius:50%;background:linear-gradient(160deg,#FFE9E6,#FFCFC9);box-shadow:inset 0 0 0 1.5px rgba(244,81,70,.18)}
+.hero-art img{position:relative;height:min(470px,60vw);width:auto;filter:drop-shadow(0 28px 26px rgba(120,30,20,.28));animation:bob 5s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-10px)}}
+.chip{position:absolute;display:flex;align-items:center;gap:10px;background:#fff;color:var(--ink);font-weight:600;font-size:15px;padding:10px 16px 10px 10px;border-radius:99px;box-shadow:0 14px 30px -12px rgba(120,30,20,.4);animation:float 6s ease-in-out infinite}
+.chip i{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--tint);color:var(--brand-d)}
+.chip svg{width:18px;height:18px}
+.chip.c1{left:2%;top:16%}.chip.c2{right:0;top:36%;animation-delay:-2s}.chip.c3{left:6%;bottom:12%;animation-delay:-4s}
+@keyframes float{50%{transform:translateY(-8px)}}
+
+/* what we do */
+.cards{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+.card{position:relative;grid-column:span 2;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;min-height:300px;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-6px);box-shadow:0 24px 40px -24px rgba(120,30,20,.35)}
+.card.wide{grid-column:span 3}
+.card h3{font-size:26px;margin-bottom:8px}
+.card p{color:var(--mut);max-width:230px;font-size:16px}
+.card .art{position:absolute;right:-6px;bottom:-4px;height:68%;width:auto;transition:transform .35s}
+.card:hover .art{transform:scale(1.06) rotate(-2deg)}
+.card .go{margin-top:auto;position:relative;z-index:1;display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--brand-d);padding-top:22px}
+.card .go svg{width:18px;height:18px;transition:transform .2s}
+.card:hover .go svg{transform:translateX(4px)}
+.card.tint-a{background:linear-gradient(160deg,#fff 40%,#FFF1EF)}
+.card.tint-b{background:linear-gradient(160deg,#fff 40%,#FFF8E8)}
+.card.tint-c{background:linear-gradient(160deg,#fff 40%,#EFF6FF)}
+.card.tint-d{background:linear-gradient(160deg,#fff 40%,#EAF8EE)}
+.card.more{background:linear-gradient(150deg,#2A2630,#17141B);border:0;color:#fff}
+.card.more p{color:rgba(255,255,255,.78)}.card.more .go{color:#FFB3AC}
+.card.wide .art{height:86%}
+.card .art.cart{height:84%;right:4px;bottom:6px}
+
+/* steps */
+.steps-sec{background:#fff;border-block:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:s}
+.step{position:relative;padding:28px;border-radius:var(--r);background:var(--bg);border:1px solid var(--line)}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--brand);color:#fff;font-family:var(--head);font-weight:700;font-size:20px;margin-bottom:18px}
+.step h3{font-size:22px;margin-bottom:6px}
+.step p{color:var(--mut);font-size:16px}
+
+/* reviews */
+.reviews{padding-bottom:72px}
+.rev-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:34px}
+.rev-side{display:flex;align-items:center;gap:20px}
+.score{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px 20px 12px 16px;transition:box-shadow .2s}
+.score:hover{box-shadow:0 14px 28px -16px rgba(120,30,20,.4)}
+.score>b{font-family:var(--head);font-size:42px;line-height:1;color:var(--ink)}
+.score .stars{display:block;color:#F5A623;font-size:19px;letter-spacing:2px;line-height:1}
+.score small{display:block;color:var(--mut);font-size:14px;margin-top:4px}
+.arrows{display:flex;gap:10px}
+.arrows button{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.arrows button:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.arrows svg{width:22px;height:22px;fill:none;stroke:currentColor}
+.rev-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:6px max(20px,calc((100vw - var(--max))/2)) 28px;scroll-padding-inline:max(20px,calc((100vw - var(--max))/2));scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.rev-track::-webkit-scrollbar{display:none}
+.rcard{flex:0 0 min(360px,84vw);scroll-snap-align:start;margin:0;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;justify-content:space-between;gap:22px;min-height:270px;transition:transform .25s,box-shadow .25s}
+.rcard:hover{transform:translateY(-4px);box-shadow:0 22px 36px -24px rgba(120,30,20,.35)}
+.rcard .q{width:30px;height:30px;color:var(--brand)}
+.rcard blockquote{font-size:17px;line-height:1.55;color:var(--ink);margin-top:-6px;flex:1}
+.rcard figcaption{display:flex;align-items:center;gap:12px}
+.av{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;color:#fff;font-weight:600;font-size:18px;flex:none}
+.rcard figcaption b{display:block;font-size:16px}
+.rcard figcaption small{color:var(--mut);font-size:13px}
+.more-card{background:linear-gradient(150deg,#2A2630,#17141B);border:0;color:#fff;align-items:flex-start;justify-content:center;gap:10px}
+.more-card b{font-family:var(--head);font-size:28px;line-height:1.15}
+.more-card span{display:inline-flex;gap:8px;align-items:center;font-weight:600;color:#FFB3AC}
+
+/* about */
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.about-art{position:relative;display:grid;place-items:center;aspect-ratio:1/1;border-radius:36px;background:linear-gradient(160deg,#FFF1EF,#FFD9D4);overflow:hidden}
+.about-art::before,.about-art::after{content:"";position:absolute;border-radius:50%;border:1.5px solid rgba(244,81,70,.25)}
+.about-art::before{width:78%;aspect-ratio:1}.about-art::after{width:104%;aspect-ratio:1}
+.about-art img{position:relative;z-index:1;width:54%;height:auto;border-radius:22%;box-shadow:0 30px 50px -20px rgba(150,30,20,.55);transform:rotate(-6deg);transition:transform .4s}
+.about-art:hover img{transform:rotate(0) scale(1.04)}
+.about h2{font-size:clamp(30px,4.2vw,44px);margin:14px 0 16px}
+.about p{color:var(--mut);font-size:18px;margin-bottom:12px}
+.points{list-style:none;margin-top:24px;display:grid;gap:16px}
+.points li{display:flex;gap:14px;align-items:flex-start}
+.points .tick{flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--tint);color:var(--brand-d)}
+.points svg{width:16px;height:16px}
+.points b{display:block;font-size:17px}
+.points span{color:var(--mut);font-size:16px}
+
+/* apps */
+.apps{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center;padding:56px;border-radius:36px;color:#fff;overflow:hidden;background:radial-gradient(520px 320px at 92% 8%,rgba(244,81,70,.35) 0%,transparent 70%),linear-gradient(160deg,#2A2630,#15131A)}
+.apps h2{font-size:clamp(30px,4.2vw,46px);margin:16px 0 14px}
+.apps p{color:rgba(255,255,255,.82);font-size:18px;max-width:480px}
+.apps .eyebrow{background:rgba(255,255,255,.12);color:#fff}
+.stores{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 14px}
+.store{display:flex;align-items:center;gap:12px;padding:12px 18px;border-radius:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);cursor:default}
+.store svg{width:26px;height:26px}
+.store b{display:block;font-size:16px;line-height:1.1}.store span{font-size:12px;opacity:.8}
+.notify{display:inline-flex;align-items:center;gap:8px;font-weight:600;text-decoration:underline;text-underline-offset:5px;text-decoration-color:var(--brand)}
+.phone{position:relative;justify-self:center;width:262px;border-radius:38px;background:#0B0A0E;padding:10px;box-shadow:0 40px 60px -24px rgba(0,0,0,.7);transform:rotate(4deg);border:1px solid rgba(255,255,255,.12)}
+.screen{border-radius:30px;overflow:hidden;background:#fff;line-height:0}
+.screen img{width:100%;height:auto}
+.s-head{background:linear-gradient(180deg,#F7685D,#F45146);color:#fff;padding:22px 16px 20px;border-radius:0 0 26px 26px}
+.s-head small{opacity:.9;font-size:12px}.s-head b{display:block;font-family:var(--head);font-size:18px}
+.s-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px}
+.s-tile{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px 10px 6px;font-weight:600;font-size:13px;text-align:center}
+.s-tile img{height:62px;width:auto;margin:0 auto 4px}
+.s-bar{margin:0 14px;padding:12px;border-radius:14px;background:var(--ink);color:#fff;text-align:center;font-weight:600;font-size:14px}
+
+/* contact */
+.contact{background:radial-gradient(600px 300px at 12% 0%,rgba(244,81,70,.28),transparent 70%),linear-gradient(160deg,#24202A,#15131A);color:#fff;border-radius:56px 56px 0 0;padding:84px 0 72px;margin-top:40px}
+.contact h2{font-size:clamp(32px,4.6vw,52px);max-width:640px;margin-bottom:12px}
+.contact .sub{color:rgba(255,255,255,.8);font-size:19px;margin-bottom:36px}
+.c-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.c-card{display:flex;align-items:center;gap:20px;padding:26px 28px;border-radius:24px;transition:transform .2s,box-shadow .2s}
+.c-card:hover{transform:translateY(-4px)}
+.c-card .ic{display:grid;place-items:center;flex:none;width:64px;height:64px;border-radius:20px}
+.c-card .ic svg{width:32px;height:32px}
+.c-card small{display:block;font-size:15px;font-weight:500}
+.c-card b{display:block;font-family:var(--head);font-size:clamp(26px,3.4vw,38px);letter-spacing:-.01em;line-height:1.15}
+.c-card em{font-style:normal;font-size:15px;font-weight:600;display:inline-flex;gap:6px;align-items:center;margin-top:4px}
+.c-wa{background:var(--wa);color:#04260F;box-shadow:0 20px 40px -20px rgba(37,211,102,.8)}
+.c-wa .ic{background:rgba(4,38,15,.12)}
+.c-call{background:#fff;color:var(--ink)}
+.c-call .ic{background:var(--tint);color:var(--brand-d)}
+.c-call small{color:var(--mut)}
+.c-call em{color:var(--brand-d)}
+
+footer{background:#0F0D13;color:rgba(255,255,255,.8);padding:36px 0 40px;font-size:15px}
+.foot{display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,.14);padding-top:28px}
+footer .logo img{height:32px}
+.foot nav{display:flex;gap:22px;flex-wrap:wrap}.foot nav a:hover{color:#fff;text-decoration:underline;text-decoration-color:var(--brand)}
+.foot-addr{width:100%;font-size:14px;color:rgba(255,255,255,.65)}
+
+/* sticky mobile bar */
+.bar{display:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+.no-js .rv{opacity:1;transform:none}
+
+@media(max-width:960px){
+  .nav-links{display:none}
+  .hero{padding:112px 0 56px}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-art{min-height:340px;margin-top:8px}
+  .hero-art img{height:310px}
+  .chip{font-size:13px;padding:8px 12px 8px 8px}.chip i{width:26px;height:26px}.chip svg{width:15px;height:15px}
+  .cards{grid-template-columns:1fr 1fr}.card,.card.wide{grid-column:span 1}.card.more{grid-column:span 2}
+  .steps{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr;gap:32px}.about-art{aspect-ratio:1/.8}
+  .about-art img{width:38%}
+  .apps{grid-template-columns:1fr;padding:40px 26px;border-radius:28px}.phone{transform:none;margin-top:12px}
+  .c-grid{grid-template-columns:1fr}
+  .contact{border-radius:36px 36px 0 0}
+  .sec{padding:64px 0}
+}
+@media(max-width:620px){
+  body{font-size:16px;padding-bottom:84px}
+  .cards{grid-template-columns:1fr}.card.more{grid-column:auto}.card{min-height:230px}
+  .card p{max-width:60%}.card .art{height:62%}
+  .nav .wrap{height:64px}
+  .logo img{height:30px}
+  .nav-cta{gap:8px}
+  .nav-cta .btn{height:42px;padding:0 14px;font-size:15px;gap:8px}
+  .nav-cta .btn-call{width:42px;padding:0}
+  .nav-cta .btn-call .t-long{display:none}
+  .nav-cta .btn-wa .t-long{display:none}
+  .nav-cta .btn-wa .t-short{display:inline}
+  .hero{margin-top:-64px;padding-top:100px}
+  .cta-row .btn{width:100%}
+  .hero h1{font-size:40px}
+  .arrows{display:none}.rev-head{align-items:flex-start}.rcard{min-height:250px}
+  .bar{display:grid;grid-template-columns:1fr 1.3fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,251,250,.96);backdrop-filter:blur(12px);box-shadow:0 -8px 24px -12px rgba(60,20,15,.3);transform:translateY(110%);transition:transform .3s}
+  .bar.show{transform:none}
+  .bar .btn{padding:14px 10px;font-size:16px;border-radius:12px}
+  .bar .btn-call{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .c-card{padding:20px}.c-card .ic{width:52px;height:52px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}.rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body class="no-js">
+<a class="skip" href="#what">Skip to content</a>
+
+<!-- icons -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-logo" viewBox="0 0 103 116"><path fill="currentColor" d="M81.2378 95.1238C81.2378 95.1238 83.66 92.9961 89.8339 79.1821C96.0078 65.3681 102.87 1.24551 102.87 1.24551C100.914 1.24551 77.4344 1.24086 72.2719 1.24551L71.003 3.25534C62.8317 -0.762362 54.2773 -0.929096 45.6796 2.02856C42.0061 3.28614 38.5644 5.1395 35.4926 7.51458C32.4068 9.90114 28.2136 14.7989 25.3276 17.8468C21.9335 21.4313 17.2714 25.8592 14.3108 29.6354C12.4259 32.0427 10.8168 34.6537 9.513 37.4185C5.19338 46.4934 3.58033 59.1034 6.93452 68.7626C8.4686 73.1803 10.6571 76.021 13.9913 79.1821C9.13186 87.2009 4.4668 95.337 0 103.581C11.4113 113.582 25.617 116.777 40.4958 115.846C61.5384 114.533 74.8814 103.047 81.2378 95.1238Z"/><path style="fill:var(--logo-in,#0D47A1)" d="M54.4349 5.04911C56.6359 4.69511 61.1528 4.87383 63.3472 5.42561C69.3254 6.92913 71.851 9.34551 75.0011 14.2951L76.3924 5.98178C83.5836 5.95685 90.7749 5.97031 97.9658 6.02262C95.7267 17.3308 94.4139 29.3203 92.4424 40.7177C90.1566 53.1493 89.6569 66.9523 83.702 78.3106C72.8089 99.0861 43.5455 100.013 24.9906 89.7667C23.5499 88.9135 22.9659 88.4392 21.6746 87.3929L31.1697 70.6463C38.4758 76.1935 52.3505 80.0244 60.7712 74.377C65.372 71.2917 66.2531 65.752 67.1877 60.6742C62.8852 64.7521 59.5171 67.2335 53.4081 67.9816C46.7205 68.847 39.9649 67.0012 34.6469 62.8549C29.2682 58.6402 26.1868 52.1176 25.4869 45.4141C23.4959 26.3544 34.4227 7.33202 54.4349 5.04911Z"/><path fill="currentColor" d="M71.5403 9.60291L71.7014 9.93743C68.3934 17.5795 64.5882 27.095 61.6094 34.8501L75.5458 34.8348C65.6932 44.9896 55.021 57.1759 45.463 67.7879C45.8635 64.8015 54.0863 47.0824 55.8198 42.9686L41.3193 42.9501C50.9602 31.7808 61.6692 20.6384 71.5403 9.60291Z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path fill="currentColor" d="M9.1 7.6c.2-.4.5-.4.7-.4h.5c.2 0 .4 0 .5.4l.7 1.7c.1.2 0 .4-.1.6l-.5.6c-.1.2-.1.3 0 .5.4.7 1 1.3 1.7 1.7.2.1.4.1.5-.1l.6-.7c.2-.2.3-.2.5-.1l1.6.8c.2.1.3.2.3.4 0 .5-.2 1-.7 1.4-.5.4-1.1.5-1.8.3-2.6-.8-4.5-2.7-5.2-4.8-.2-.7 0-1.3.4-1.8z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-food" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16ZM3.3 7 12 12l8.7-5M12 22V12"/></symbol>
+  <symbol id="i-pill" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7ZM8.5 8.5l7 7"/></symbol>
+  <symbol id="i-android" viewBox="0 0 24 24"><path fill="currentColor" d="M6 18c0 .55.45 1 1 1h1v3.5a1.5 1.5 0 0 0 3 0V19h2v3.5a1.5 1.5 0 0 0 3 0V19h1c.55 0 1-.45 1-1V8H6zM3.5 8A1.5 1.5 0 0 0 2 9.5v7a1.5 1.5 0 0 0 3 0v-7A1.5 1.5 0 0 0 3.5 8m17 0A1.5 1.5 0 0 0 19 9.5v7a1.5 1.5 0 0 0 3 0v-7A1.5 1.5 0 0 0 20.5 8M15.53 2.16l1.3-1.3a.5.5 0 0 0-.7-.7l-1.48 1.48A5.98 5.98 0 0 0 12 1c-.96 0-1.86.23-2.66.63L7.85.16a.5.5 0 0 0-.7.7l1.3 1.3A5.98 5.98 0 0 0 6 7h12a5.98 5.98 0 0 0-2.47-4.84M10 5H9V4h1zm5 0h-1V4h1z"/></symbol>
+  <symbol id="i-apple" viewBox="0 0 24 24"><path fill="currentColor" d="M16.4 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.400-1.8-1.4-.1-2.8.9-3.500.9s-1.800-.8-3-.8c-1.500 0-3 .9-3.800 2.300-1.600 2.800-.4 7 1.200 9.300.8 1.100 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7 2-1.100 2.800-2.200c.9-1.300 1.200-2.500 1.300-2.600-.1 0-2.500-1-2.500-3.900zM14.100 5.900c.6-.8 1.100-1.800.9-2.900-.9 0-2 .6-2.700 1.400-.6.700-1.100 1.800-1 2.800 1 .1 2.100-.5 2.800-1.300z"/></symbol>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Groods home"><img src="assets/groods-logo.svg" alt="Groods" width="108" height="36"></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#what">What we do</a><a href="#how">How to order</a><a href="#reviews">Reviews</a><a href="#about">About us</a><a href="#apps">App</a><a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-call" href="tel:+919092162170" aria-label="Call 90 921 621 70"><svg><use href="#i-phone"/></svg><span class="t-long">Call</span></a>
+      <a class="btn btn-wa" href="https://wa.me/919092162170?text=Hi%20Groods%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span class="t-long">Order on WhatsApp</span><span class="t-short">Order</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow"><span class="pulse"></span>Now delivering in Tirupur</span>
+      <h1>Whatever you need, <em>we bring it home.</em></h1>
+      <p class="lead">Food, parcels, medicines, groceries and more – delivered to your door by Groods. Just message or call us, no app needed.</p>
+      <div class="cta-row" id="heroCta">
+        <a class="btn btn-wa btn-lg" href="https://wa.me/919092162170?text=Hi%20Groods%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Order on WhatsApp</a>
+        <a class="btn btn-call btn-lg" href="tel:+919092162170"><svg><use href="#i-phone"/></svg>Call 90 921 621 70</a>
+      </div>
+      <a class="hero-rate" href="#reviews"><span class="stars" aria-hidden="true">★★★★★</span><span><b>4.7</b> on Google · 91 reviews</span></a>
+    </div>
+    <div class="hero-art">
+      <img src="assets/mascot-thumbs.webp" width="669" height="900" alt="Groods delivery rider on a scooter">
+      <span class="chip c1"><i><svg><use href="#i-food"/></svg></i>Food</span>
+      <span class="chip c2"><i><svg><use href="#i-box"/></svg></i>Parcels</span>
+      <span class="chip c3"><i><svg><use href="#i-pill"/></svg></i>Medicines</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section class="sec" id="what">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">What we do</span>
+      <h2>One number. Everything delivered.</h2>
+      <p>From a hot meal to an urgent parcel – tell us what you need and we will bring it to you.</p>
+    </div>
+    <div class="cards">
+      <a class="card tint-a rv" href="https://wa.me/919092162170?text=Hi%20Groods%2C%20I%20would%20like%20to%20order%20food." target="_blank" rel="noopener">
+        <h3>Food</h3><p>Your favourite meals from restaurants around Tirupur.</p>
+        <img class="art" src="assets/rider-food.webp" width="373" height="543" alt="" loading="lazy">
+        <span class="go">Order food <svg><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="card tint-b rv" href="https://wa.me/919092162170?text=Hi%20Groods%2C%20I%20would%20like%20to%20send%20a%20parcel." target="_blank" rel="noopener">
+        <h3>Parcels</h3><p>Send or collect parcels across the city, safely.</p>
+        <img class="art" src="assets/parcels.webp" width="520" height="426" alt="" loading="lazy" style="height:46%">
+        <span class="go">Send a parcel <svg><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="card tint-c rv" href="https://wa.me/919092162170?text=Hi%20Groods%2C%20I%20need%20to%20order%20medicines." target="_blank" rel="noopener">
+        <h3>Medicines</h3><p>Prescription and everyday medicines from licensed medical shops.</p>
+        <img class="art" src="assets/medicines.webp" width="509" height="390" alt="" loading="lazy" style="height:46%">
+        <span class="go">Order medicines <svg><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="card wide tint-d rv" href="https://wa.me/919092162170?text=Hi%20Groods%2C%20I%20would%20like%20to%20order%20groceries." target="_blank" rel="noopener">
+        <h3>Groceries</h3><p>Daily essentials and fresh items, from shop to your door.</p>
+        <img class="art cart" src="assets/groceries-cart.webp" width="703" height="720" alt="" loading="lazy">
+        <span class="go">Order groceries <svg><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="card wide more rv" href="https://wa.me/919092162170?text=Hi%20Groods%2C%20I%20need%20help%20with%20a%20delivery." target="_blank" rel="noopener">
+        <h3>…and more</h3><p>Need something else picked up and delivered? Just ask us.</p>
+        <img class="art" src="assets/mascot-phone.webp" width="551" height="800" alt="" loading="lazy">
+        <span class="go">Tell us what you need <svg><use href="#i-arrow"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="sec steps-sec" id="how">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">How to order</span>
+      <h2>Three easy steps</h2>
+      <p>No app to download and nothing to sign up for.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><h3>Message or call us</h3><p>Tap WhatsApp or call 90 921 621 70.</p></div>
+      <div class="step rv"><h3>Tell us what you need</h3><p>Share the order, pickup and drop details. We confirm the price with you.</p></div>
+      <div class="step rv"><h3>We deliver</h3><p>Our rider brings it to your door. Pay online or on delivery.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec reviews" id="reviews">
+  <div class="wrap rev-head rv">
+    <div class="sec-head" style="margin-bottom:0">
+      <span class="eyebrow">Reviews</span>
+      <h2>Loved by customers across Tirupur</h2>
+      <p>Real words from real customers on Google.</p>
+    </div>
+    <div class="rev-side">
+      <a class="score" href="https://share.google/To2bdziSfGjPuQKso" target="_blank" rel="noopener" aria-label="4.7 out of 5 from 91 Google reviews">
+        <b>4.7</b><span><span class="stars" aria-hidden="true">★★★★★</span><small>91 Google reviews</small></span>
+      </a>
+      <div class="arrows"><button type="button" id="rPrev" aria-label="Previous reviews"><svg viewBox="0 0 24 24"><use href="#i-arrow" transform="rotate(180 12 12)"/></svg></button><button type="button" id="rNext" aria-label="Next reviews"><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></button></div>
+    </div>
+  </div>
+  <div class="rev-track" id="rTrack" tabindex="0" aria-label="Customer reviews, scroll sideways">
+      <figure class="rcard"><svg class="q" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 6C6.5 7 4 9.8 4 14v4h6v-6H7c.1-2 1.2-3.2 3.2-3.8zm9 0c-3 1-5.5 3.8-5.5 8v4h6v-6h-3c.1-2 1.2-3.2 3.2-3.8z"/></svg><blockquote>I’ve had an excellent experience with Prakash from GROODS. He was prompt, courteous, and very professional. For all my deliveries, Prakash delivered my order on time just like he promised.</blockquote>
+        <figcaption><span class="av" style="background:#F45146">S</span><span><b>Shivmithran Arunkumar</b><small>Google review</small></span></figcaption></figure>
+      <figure class="rcard"><svg class="q" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 6C6.5 7 4 9.8 4 14v4h6v-6H7c.1-2 1.2-3.2 3.2-3.8zm9 0c-3 1-5.5 3.8-5.5 8v4h6v-6h-3c.1-2 1.2-3.2 3.2-3.8z"/></svg><blockquote>The Cake and the flower delivery was on point. And it is very easy and comfortable talking to Pradeep. Very trustworthy and Professional. Best delivery service.</blockquote>
+        <figcaption><span class="av" style="background:#2A2630">S</span><span><b>Sugi</b><small>Google review</small></span></figcaption></figure>
+      <figure class="rcard"><svg class="q" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 6C6.5 7 4 9.8 4 14v4h6v-6H7c.1-2 1.2-3.2 3.2-3.8zm9 0c-3 1-5.5 3.8-5.5 8v4h6v-6h-3c.1-2 1.2-3.2 3.2-3.8z"/></svg><blockquote>They are the best delivery service in Tirupur. The only person I can trust with my cake delivery. They are so patient and they handle the cakes n desserts so carefully. They are always JUST IN TIME.</blockquote>
+        <figcaption><span class="av" style="background:#F45146">H</span><span><b>Hamsa Mugi</b><small>Google review</small></span></figcaption></figure>
+      <figure class="rcard"><svg class="q" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 6C6.5 7 4 9.8 4 14v4h6v-6H7c.1-2 1.2-3.2 3.2-3.8zm9 0c-3 1-5.5 3.8-5.5 8v4h6v-6h-3c.1-2 1.2-3.2 3.2-3.8z"/></svg><blockquote>Been using their service for a long time and they don’t fail to deliver it right and on time. One great advantage is that they provide their service to any restaurants of your choice.</blockquote>
+        <figcaption><span class="av" style="background:#2A2630">S</span><span><b>Sudhan Murugesan</b><small>Google review · Local Guide</small></span></figcaption></figure>
+      <figure class="rcard"><svg class="q" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 6C6.5 7 4 9.8 4 14v4h6v-6H7c.1-2 1.2-3.2 3.2-3.8zm9 0c-3 1-5.5 3.8-5.5 8v4h6v-6h-3c.1-2 1.2-3.2 3.2-3.8z"/></svg><blockquote>Best Food Delivery Service. Each and Every Order they Deliver it on Time with Proper Executives without any damages. Really Loved their Service..</blockquote>
+        <figcaption><span class="av" style="background:#F45146">G</span><span><b>Gomath Vaikundam S</b><small>Google review</small></span></figcaption></figure>
+      <figure class="rcard"><svg class="q" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 6C6.5 7 4 9.8 4 14v4h6v-6H7c.1-2 1.2-3.2 3.2-3.8zm9 0c-3 1-5.5 3.8-5.5 8v4h6v-6h-3c.1-2 1.2-3.2 3.2-3.8z"/></svg><blockquote>Phone calls were responded immediately, polite, service was excellent &amp; quick!</blockquote>
+        <figcaption><span class="av" style="background:#2A2630">B</span><span><b>Bharathi Bhaskar</b><small>Google review</small></span></figcaption></figure>
+      <figure class="rcard"><svg class="q" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 6C6.5 7 4 9.8 4 14v4h6v-6H7c.1-2 1.2-3.2 3.2-3.8zm9 0c-3 1-5.5 3.8-5.5 8v4h6v-6h-3c.1-2 1.2-3.2 3.2-3.8z"/></svg><blockquote>Best delivery service in Tirupur.</blockquote>
+        <figcaption><span class="av" style="background:#F45146">B</span><span><b>Balaji Anbu</b><small>Google review</small></span></figcaption></figure>
+      <figure class="rcard"><svg class="q" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 6C6.5 7 4 9.8 4 14v4h6v-6H7c.1-2 1.2-3.2 3.2-3.8zm9 0c-3 1-5.5 3.8-5.5 8v4h6v-6h-3c.1-2 1.2-3.2 3.2-3.8z"/></svg><blockquote>Very prompt service. Courteous staff. Highly recommend this team.</blockquote>
+        <figcaption><span class="av" style="background:#2A2630">S</span><span><b>Senbagam</b><small>Google review</small></span></figcaption></figure>
+      <figure class="rcard"><svg class="q" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 6C6.5 7 4 9.8 4 14v4h6v-6H7c.1-2 1.2-3.2 3.2-3.8zm9 0c-3 1-5.5 3.8-5.5 8v4h6v-6h-3c.1-2 1.2-3.2 3.2-3.8z"/></svg><blockquote>Groods save my so much of time. I LOVE GROODS. I like on time delivery. Thank you GROODS</blockquote>
+        <figcaption><span class="av" style="background:#F45146">P</span><span><b>P. ராஜசண்டிகேஸ்வரன்</b><small>Google review</small></span></figcaption></figure>
+      <figure class="rcard"><svg class="q" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 6C6.5 7 4 9.8 4 14v4h6v-6H7c.1-2 1.2-3.2 3.2-3.8zm9 0c-3 1-5.5 3.8-5.5 8v4h6v-6h-3c.1-2 1.2-3.2 3.2-3.8z"/></svg><blockquote>Glad I found Groods, delivery was better than expected, Well Done.</blockquote>
+        <figcaption><span class="av" style="background:#2A2630">V</span><span><b>Vinith S</b><small>Google review</small></span></figcaption></figure>
+    <a class="rcard more-card" href="https://share.google/To2bdziSfGjPuQKso" target="_blank" rel="noopener"><b>Read all 91 reviews</b><span>on Google <svg style="width:18px;height:18px"><use href="#i-arrow"/></svg></span></a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec" id="about">
+  <div class="wrap about">
+    <div class="about-art rv"><img src="assets/app-icon.svg" width="1024" height="1024" alt="Groods app icon" loading="lazy"></div>
+    <div class="rv">
+      <span class="eyebrow">About us</span>
+      <h2>A local delivery service, made for Tirupur.</h2>
+      <p>Groods picks up what you need and brings it home – a meal, a parcel, your medicines or your weekly groceries. We are local, so we know the streets, the shops and the people we serve.</p>
+      <ul class="points">
+        <li><span class="tick"><svg><use href="#i-check"/></svg></span><div><b>Made for Tirupur</b><span>Local riders who know the city.</span></div></li>
+        <li><span class="tick"><svg><use href="#i-check"/></svg></span><div><b>One number for everything</b><span>Food, parcels, medicines, groceries and more.</span></div></li>
+        <li><span class="tick"><svg><use href="#i-check"/></svg></span><div><b>Careful with your things</b><span>Every order is handled with care and handed over to you.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- APPS -->
+<section class="sec" id="apps" style="padding-top:8px">
+  <div class="wrap">
+    <div class="apps rv">
+      <div>
+        <span class="eyebrow">Mobile apps</span>
+        <h2>Our app is coming soon</h2>
+        <p>Order, track your rider and pay – all in one place. Until then, WhatsApp or call us and we will take care of it.</p>
+        <div class="stores">
+          <div class="store" aria-label="Android app coming soon"><svg><use href="#i-android"/></svg><div><span>Coming soon on</span><b>Android</b></div></div>
+          <div class="store" aria-label="iPhone app coming soon"><svg><use href="#i-apple"/></svg><div><span>Coming soon on</span><b>iPhone</b></div></div>
+        </div>
+        <a class="notify" href="https://wa.me/919092162170?text=Hi%20Groods%2C%20please%20let%20me%20know%20when%20the%20app%20is%20live." target="_blank" rel="noopener">Tell me when it is live <svg style="width:18px;height:18px"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="phone" aria-hidden="true">
+        <div class="screen"><img src="assets/app-screen.webp" width="390" height="804" alt="Groods app home screen preview" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Ready to order? We are one tap away.</h2>
+    <p class="sub">Place your order on WhatsApp or call us – the same number for both.</p>
+    <div class="c-grid">
+      <a class="c-card c-wa" href="https://wa.me/919092162170?text=Hi%20Groods%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener">
+        <span class="ic"><svg><use href="#i-wa"/></svg></span>
+        <span><small>Order on WhatsApp</small><b>90 921 621 70</b><em>Open WhatsApp <svg style="width:16px;height:16px"><use href="#i-arrow"/></svg></em></span>
+      </a>
+      <a class="c-card c-call" href="tel:+919092162170">
+        <span class="ic"><svg><use href="#i-phone"/></svg></span>
+        <span><small>Call to order</small><b>90 921 621 70</b><em style="color:var(--blue)">Call now <svg style="width:16px;height:16px"><use href="#i-arrow"/></svg></em></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a class="logo" href="#top" aria-label="Groods home"><img src="assets/groods-logo.svg" alt="Groods" width="108" height="36"></a>
+      <nav aria-label="Footer"><a href="#what">What we do</a><a href="#reviews">Reviews</a><a href="#about">About us</a><a href="#apps">App</a><a href="#contact">Contact</a></nav>
+      <span>© <span id="yr">2026</span> Groods. Tirupur.</span>
+      <p class="foot-addr">Groods, 30, 4th St Stanes Rd, KNP Puram, Odakkadu, Tiruppur, Tamil Nadu 641602  ·  <a href="tel:+919092162170">90 921 621 70</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- mobile sticky actions -->
+<div class="bar" id="bar">
+  <a class="btn btn-call" href="tel:+919092162170"><svg><use href="#i-phone"/></svg>Call</a>
+  <a class="btn btn-wa" href="https://wa.me/919092162170?text=Hi%20Groods%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Order on WhatsApp</a>
+</div>
+
+<script>
+document.body.classList.remove('no-js');
+var tr=document.getElementById('rTrack');function step(d){var c=tr.querySelector('.rcard');tr.scrollBy({left:d*(c.offsetWidth+18)*(innerWidth>900?2:1),behavior:'smooth'})}
+document.getElementById('rPrev').onclick=function(){step(-1)};document.getElementById('rNext').onclick=function(){step(1)};
+document.getElementById('yr').textContent=new Date().getFullYear();
+var nav=document.getElementById('nav');
+function onScroll(){nav.classList.toggle('solid',window.scrollY>40)}
+onScroll();addEventListener('scroll',onScroll,{passive:true});
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el,i){el.style.transitionDelay=(i%3)*80+'ms';io.observe(el)});
+  var bar=document.getElementById('bar'),cta=document.getElementById('heroCta'),contact=document.getElementById('contact');
+  var vis={cta:true,contact:false};
+  function upd(){bar.classList.toggle('show',!vis.cta&&!vis.contact)}
+  new IntersectionObserver(function(e){vis.cta=e[0].isIntersecting;upd()}).observe(cta);
+  new IntersectionObserver(function(e){vis.contact=e[0].isIntersecting;upd()},{threshold:.25}).observe(contact);
+}else{document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')})}
+</script>
+</body>
+</html>
