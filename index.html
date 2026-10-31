@@ -509,6 +509,11 @@ if('IntersectionObserver' in window){
   new IntersectionObserver(function(e){vis.cta=e[0].isIntersecting;upd()}).observe(cta);
   new IntersectionObserver(function(e){vis.contact=e[0].isIntersecting;upd()},{threshold:.25}).observe(contact);
 }else{document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')})}
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a[href*="wa.me"],a[href^="tel:"]');if(!a||typeof gtag!='function')return;
+  var sec=a.closest('[id]'),h=a.querySelector('h3,small');
+  gtag('event',a.href.indexOf('wa.me')>-1?'whatsapp_click':'call_click',{link_location:sec?sec.id:'page',link_label:h?h.textContent:a.textContent.trim().replace(/\s+/g,' ')});
+});
 </script>
 </body>
 </html>
