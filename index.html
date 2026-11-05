@@ -568,7 +568,7 @@ dialog.ah::backdrop{background:rgba(21,19,26,.55);-webkit-backdrop-filter:blur(3
   <a class="btn btn-wa" href="https://wa.me/919092162170?text=Hi%20Groods%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Order on WhatsApp</a>
 </div>
 
-<!-- after-hours popup (10:30 pm - 7 am IST) -->
+<!-- after-hours popup (10 pm - 7 am IST) -->
 <dialog class="ah" id="ahDialog" aria-labelledby="ahTitle">
   <div class="ah-in">
     <button type="button" class="ah-x" data-ah="later" aria-label="Close">&times;</button>
@@ -611,10 +611,10 @@ document.addEventListener('click',function(e){
   track(a.href.indexOf('wa.me')>-1?'whatsapp_click':'call_click',linkInfo(a));
 });
 
-/* After hours (10:30 pm - 7 am IST): show business hours before opening WhatsApp. Add ?afterhours=1 to the URL to test. */
+/* After hours (10 pm - 7 am IST): show business hours before opening WhatsApp. Add ?afterhours=1 to the URL to test. */
 (function(){
   var dlg=document.getElementById('ahDialog');if(!dlg||typeof dlg.showModal!='function')return;
-  var QUIET_FROM=22*60+30,QUIET_TO=7*60,pending=null;
+  var QUIET_FROM=22*60,QUIET_TO=7*60,pending=null;
   function istMinutes(){var d=new Date();return(d.getUTCHours()*60+d.getUTCMinutes()+330)%1440}
   function istTime(){var m=istMinutes();return String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0')}
   function isAfterHours(){if(/[?&]afterhours=1\b/.test(location.search))return true;var m=istMinutes();return m>=QUIET_FROM||m<QUIET_TO}
