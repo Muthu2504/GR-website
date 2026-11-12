@@ -390,3 +390,17 @@ dialog.ah::backdrop{background:rgba(21,19,26,.55);-webkit-backdrop-filter:blur(3
   .promo-badge{width:64px;height:64px;font-size:11px;left:-26px;top:6px}.promo-badge b{font-size:21px}
   .promo-cta{width:100%;justify-content:center}
 }
+
+/* partner card: page link + WhatsApp pill */
+li.pcard{list-style:none}
+.p-link{display:flex;flex-direction:column;flex:1}
+.p-link:hover h4{color:var(--brand-d)}
+.all-rest{margin-top:28px;font-size:16px}
+.all-rest a{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--brand-d);text-decoration:underline;text-underline-offset:4px}
+.all-rest svg{width:18px;height:18px}
+
+/* restaurant pages */
+.hero-art.rest-art img{height:auto;width:min(460px,92%);border-radius:26px;border:6px solid #fff;box-shadow:0 30px 50px -24px rgba(120,30,20,.45);filter:none}
+.svc-body p a.inline{color:var(--brand-d);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.pick h2 a:hover{color:var(--brand-d)}
+@media(max-width:960px){.hero-art.rest-art{min-height:0}.hero-art.rest-art img{height:auto}}

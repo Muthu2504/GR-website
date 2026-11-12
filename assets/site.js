@@ -14,7 +14,7 @@ if('IntersectionObserver' in window){
   new IntersectionObserver(function(e){vis.cta=e[0].isIntersecting;upd()}).observe(cta);
   new IntersectionObserver(function(e){vis.contact=e[0].isIntersecting;upd()},{threshold:.25}).observe(contact);
 }else{document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')})}
-function linkInfo(a){var sec=a.closest('[id]'),h=a.querySelector('h3,h4,small');return{link_location:sec?sec.id:'page',link_label:h?h.textContent:a.textContent.trim().replace(/\s+/g,' ')}}
+function linkInfo(a){var sec=a.closest('[id]'),h=a.querySelector('h3,h4,small');return{link_location:sec?sec.id:'page',link_label:a.getAttribute('data-label')||(h?h.textContent:a.textContent.trim().replace(/\s+/g,' '))}}
 function track(name,data){if(typeof gtag=='function')gtag('event',name,data)}
 document.addEventListener('click',function(e){
   var a=e.target.closest('a[href*="wa.me"],a[href^="tel:"]');if(!a)return;
