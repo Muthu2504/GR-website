@@ -459,6 +459,33 @@ def pcard(x, indent='      '):
     return (f'''{indent}<li class="pcard"><a class="p-link" href="/restaurants/{x['slug']}/"><img src="{x['img']}" width="480" height="360" alt="{x['name']}, Tirupur" loading="lazy"><h4>{x['name']}</h4></a>'''
             f'''<a class="p-cta" href="{x['wa']}" target="_blank" rel="noopener" data-label="{x['name']}" aria-label="Order from {x['name']} on WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg>Order now</a></li>''')
 
+# Per-restaurant details so each page has its own content (not just a swapped name).
+# Keys: style = what kind of food (one short phrase), dishes = popular orders (list),
+#       note = one sentence unique to this restaurant. Only fill in what is TRUE;
+#       a restaurant with no entry gets a plainer page. Edit here, then rebuild.
+INFO = {
+    'Sasi Briyani Hotel': dict(style='Tamil-style biryani', dishes=['Chicken biryani', 'Mutton biryani', 'Egg biryani'],
+        note='A biryani-first menu, so it is the one to pick when the whole table wants biryani.'),
+    'Chettiar Kadai': dict(style='Chettinad-style non-veg food', dishes=['Chettinad chicken', 'Chicken biryani', 'Pepper fry'],
+        note='Known for the peppery, spice-rich flavours of Chettinad cooking.'),
+    'Padayappa Chettinad Hotel': dict(style='Chettinad-style meals and biryani', dishes=['Chettinad chicken', 'Mutton gravy', 'Biryani'],
+        note='A Chettinad menu with strong pepper and masala flavours.'),
+    'Junior Kuppanna': dict(style='Kongu and Tamil non-veg meals', dishes=['Meals', 'Mutton biryani', 'Chicken fry'],
+        note='A full non-veg Tamil menu, good for a proper sit-down style meal at home.'),
+    'Dindigul Sri Alagappa Briyani': dict(style='Dindigul-style biryani', dishes=['Mutton biryani', 'Chicken biryani', 'Chicken 65'],
+        note='Dindigul-style biryani, usually made with seeraga samba rice.'),
+    'Udumalai Mess': dict(style='mess-style Tamil meals', dishes=['Meals', 'Non-veg gravies', 'Fry items'],
+        note='Simple, home-style mess food for an everyday lunch or dinner.'),
+    'The Biryani Theory': dict(style='biryani', dishes=['Chicken biryani', 'Mutton biryani', 'Veg biryani'],
+        note='A biryani-focused menu with a few sides.'),
+    'The Bay Grill': dict(style='grills and main course', dishes=['Grilled chicken', 'Biryani', 'Starters'],
+        note='A good pick when you want grilled items along with a main course.'),
+    'Sandwich 99': dict(style='sandwiches', dishes=['Veg sandwich', 'Grilled sandwich', 'Pizza'],
+        note='Quick snacks and sandwiches, easy to add to a bigger order.'),
+    'Qasr Laban': dict(style='desserts and drinks', dishes=['Desserts', 'Milk-based sweets', 'Cold drinks'],
+        note='A dessert stop for after-dinner cravings or a sweet treat.'),
+}
+
 def rest_page(r):
     n = r['name']; path = f"/restaurants/{r['slug']}/"; url = SITE + path
     alt = f' (also searched as {ALSO[n]})' if n in ALSO else ''
@@ -470,6 +497,9 @@ def rest_page(r):
       (f'What time can I order from {n}?', 'Groods delivers every day from 11:00 am to 3:30 pm and from 6:00 pm to 10:00 pm, as long as the restaurant is open.'),
       ('How much does delivery cost?', 'It depends on the distance. We confirm the full price with you before we pick up your order, and you can pay online or on delivery.'),
     ]
+    inf = INFO.get(n)
+    if inf:
+        faq.insert(0, (f'What is {n} known for?', f"{n} serves {inf['style']}. Popular orders include {', '.join(inf['dishes'][:-1])} and {inf['dishes'][-1]}. {inf['note']}"))
     same = [x for x in REST if x['group'] == r['group'] and x is not r]
     others = (same + [x for x in REST if x['group'] != r['group']])[:5]
     cards = '\n'.join(pcard(x) for x in others)
@@ -502,7 +532,8 @@ def rest_page(r):
     <div class="rv">
       <span class="eyebrow">Partner restaurant</span>
       <h2>Order {n} without leaving home</h2>
-      <p>{n} is one of Groods’ partner restaurants in Tirupur. You don’t need an app or an account: just send us your order on WhatsApp or call us, and our rider brings it to your home or office.</p>
+      <p>{n} is one of Groods’ partner restaurants in Tirupur{(' and serves ' + inf['style']) if inf else ''}. {inf['note'] if inf else ''} You don’t need an app or an account: just send us your order on WhatsApp or call us, and our rider brings it to your home or office.</p>
+      {('<h3>Popular orders from ' + n + '</h3><ul style="margin:8px 0 16px;padding-left:20px;list-style:disc">' + ''.join('<li>' + d + '</li>' for d in inf['dishes']) + '</ul>') if inf else ''}
       <p>Want something from another restaurant too? Add it to the same message. See all <a class="inline" href="/restaurants/">restaurants that deliver in Tirupur</a> or read about our <a class="inline" href="/food-delivery-tirupur/">food delivery in Tirupur</a>.</p>
     </div>
     <div class="svc-box rv">
@@ -531,7 +562,7 @@ def rest_page(r):
   </div>
 </section>'''
     title = f'{n} Delivery in Tirupur | Groods' if len(n) > 22 else f'{n} Home Delivery in Tirupur | Groods'
-    desc = f'{n}' + (f' ({ALSO[n]})' if n in ALSO else '') + ' home delivery in Tirupur. Order on WhatsApp or call 90921 62170 and Groods brings your food to your door.'
+    desc = f'{n}' + (f' ({ALSO[n]})' if n in ALSO else '') + ' home delivery in Tirupur' + (f' for {inf["style"]}' if inf else '') + '. Order on WhatsApp or call 90921 62170 and Groods brings your food to your door.'
     return shell(title=title, desc=desc, url=url, img=r['img'].replace('/assets/', '', 1), w=480, h=360, lds=lds, wa=wa, main=main)
 
 def rest_index():
