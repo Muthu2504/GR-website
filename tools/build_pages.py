@@ -5,7 +5,7 @@ Run from anywhere:   python tools/build_pages.py
 Pages it writes (do not edit these by hand, re-run this script instead):
   food-/parcel-/medicine-/grocery-delivery-tirupur/index.html   (SERVICES below)
   restaurants/index.html and restaurants/<name>-tirupur/index.html
-  blog/biryani-delivery-tirupur/index.html                     (POST below)
+  biryani-delivery-tirupur/index.html                          (POST below)
 
 The header icons, contact block, mobile bar and after-hours popup are copied
 from index.html, so change them there and re-run.
@@ -117,7 +117,7 @@ for gm in re.finditer(r'<h3 class="p-title">([^<]+)</h3>\s*<ul class="p-grid">(.
 PARTNERS = [(r['wa'], r['name']) for r in REST]
 PARTNER_URL = {r['name']: r['wa'] for r in REST}
 PAGE_URL = {r['name']: f"/restaurants/{r['slug']}/" for r in REST}
-PROMO = '''<a class="promo rv" href="/blog/biryani-delivery-tirupur/">
+PROMO = '''<a class="promo rv" href="/biryani-delivery-tirupur/">
       <div>
         <span class="promo-tag"><i></i>New food guide</span>
         <h3>Craving biryani tonight?</h3>
@@ -222,7 +222,7 @@ def shell(*, title, desc, url, img, w, h, lds, wa, main, og_type='website'):
     <div class="foot">
       <a class="logo" href="/" aria-label="Groods home"><img src="/assets/groods-logo.svg" alt="Groods" width="108" height="36"></a>
       <nav aria-label="Footer"><a href="/#what">What we do</a><a href="/#reviews">Reviews</a><a href="/#about">About us</a><a href="/#faq">FAQ</a><a href="#contact">Contact</a></nav>
-      <nav aria-label="Services"><a href="/food-delivery-tirupur/">Food delivery</a><a href="/parcel-delivery-tirupur/">Parcel delivery</a><a href="/medicine-delivery-tirupur/">Medicine delivery</a><a href="/grocery-delivery-tirupur/">Grocery delivery</a><a href="/restaurants/">Restaurants</a><a href="/blog/biryani-delivery-tirupur/">Biryani in Tirupur</a></nav>
+      <nav aria-label="Services"><a href="/food-delivery-tirupur/">Food delivery</a><a href="/parcel-delivery-tirupur/">Parcel delivery</a><a href="/medicine-delivery-tirupur/">Medicine delivery</a><a href="/grocery-delivery-tirupur/">Grocery delivery</a><a href="/restaurants/">Restaurants</a><a href="/biryani-delivery-tirupur/">Biryani in Tirupur</a></nav>
       <span>© <span id="yr">2026</span> Groods. Tirupur.</span>
     </div>
   </div>
@@ -357,7 +357,7 @@ def page(key):
 
 # ---------- blog post ----------
 POST = dict(
-  path='/blog/biryani-delivery-tirupur/',
+  path='/biryani-delivery-tirupur/',
   title='Biryani Delivery in Tirupur: 7 Places to Order | Groods',
   desc='Biryani delivery in Tirupur from Hotel Sri Surya, Chettiar Kadai, Sasi Briyani Hotel, Junior Kuppanna and more. Order on WhatsApp with Groods.',
   h1='Biryani delivery in Tirupur: <em>7 places you can order from</em>',
