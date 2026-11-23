@@ -653,10 +653,60 @@ def rest_index():
                  desc=f'Restaurants with home delivery in Tirupur (Tiruppur): {short} and more. Order on WhatsApp or call 90921 62170.',
                  url=url, img='rider-food.webp', w=373, h=543, lds=lds, wa=wa, main=main)
 
+
+def order_page():
+    path = '/order/'; url = SITE + path
+    wa = WA + quote('Hi Groods, I would like to place an order.')
+    trail = [('Home', '/'), ('Order', path)]
+    groups = {}
+    for r in REST: groups.setdefault(r['group'], []).append(r)
+    blocks = '\n'.join(
+        f'''    <div class="p-group rv">
+      <h2 class="p-title">{html.escape(gname)}</h2>
+      <ul class="p-grid">
+''' + '\n'.join(pcard(x, '        ') for x in rs) + '''
+      </ul>
+    </div>''' for gname, rs in groups.items())
+    svc = ''.join(
+        f'<a class="btn btn-wa btn-lg" href="{WA + quote(s["wa"])}" target="_blank" rel="noopener" data-label="{s["short"]}"><svg><use href="#i-wa"/></svg>{lbl}</a>'
+        for s, lbl in [(SERVICES['food'], 'Order food'), (SERVICES['parcels'], 'Send a parcel'), (SERVICES['medicines'], 'Order medicines'), (SERVICES['groceries'], 'Order groceries')])
+    lds = [
+      {"@context":"https://schema.org","@type":"WebPage","name":"Order delivery in Tirupur","url":url,
+       "about":{"@type":"Thing","name":"Food, parcel, medicine and grocery delivery in Tirupur"},
+       "potentialAction":{"@type":"OrderAction","target":{"@type":"EntryPoint","urlTemplate":url,"actionPlatform":["http://schema.org/DesktopWebPlatform","http://schema.org/MobileWebPlatform"]},"deliveryMethod":"http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"}},
+      crumb_ld(trail)]
+    main = f'''<section class="hero post-hero">
+  <div class="wrap post">
+    {crumbs(trail)}
+    <span class="eyebrow"><span class="pulse"></span>Order in Tirupur</span>
+    <h1>Order food, parcels, medicines and groceries <em>on WhatsApp</em></h1>
+    <p class="lead">No app and no sign-up. Pick what you need, send us a message, and our rider brings it to your door anywhere in Tirupur. We confirm the price first, and you can pay online or on delivery.</p>
+    <div class="cta-row" id="heroCta">{svc}</div>
+    <div class="cta-row" style="margin-top:0">
+      <a class="btn btn-call btn-lg" href="tel:+919092162170"><svg><use href="#i-phone"/></svg>Or call 90 921 621 70</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec partners" id="about" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head rv"><h2>Order from a partner restaurant</h2><p>Tap “Order now” on a restaurant to send us your order on WhatsApp.</p></div>
+{blocks}
+    <p class="all-rest rv">Don’t see your favourite? We pick up from any restaurant in Tirupur. <a href="/food-delivery-tirupur/">More about food delivery in Tirupur <svg><use href="#i-arrow"/></svg></a></p>
+  </div>
+</section>
+
+{STEPS}'''
+    return shell(title='Order Delivery in Tirupur on WhatsApp | Groods',
+                 desc='Order food, parcels, medicines and groceries in Tirupur. Pick a restaurant or service and send your order on WhatsApp, or call 90921 62170.',
+                 url=url, img='rider-food.webp', w=373, h=543, lds=lds, wa=wa, main=main)
+
 for r in REST:
     d = os.path.join(ROOT, 'restaurants', r['slug']); os.makedirs(d, exist_ok=True)
     open(os.path.join(d, 'index.html'), 'w', encoding='utf-8', newline='\n').write(rest_page(r))
 open(os.path.join(ROOT, 'restaurants', 'index.html'), 'w', encoding='utf-8', newline='\n').write(rest_index())
+os.makedirs(os.path.join(ROOT, 'order'), exist_ok=True)
+open(os.path.join(ROOT, 'order', 'index.html'), 'w', encoding='utf-8', newline='\n').write(order_page())
 print('restaurants', len(REST), [r['slug'] for r in REST])
 
 
