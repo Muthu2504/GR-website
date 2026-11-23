@@ -127,7 +127,7 @@ PROMO = '''<a class="promo rv" href="/biryani-delivery-tirupur/">
       </div>
       <div class="promo-art" aria-hidden="true"><span class="promo-badge"><span><b>7</b>biryani spots</span></span><img src="/assets/rider-food.webp" width="373" height="543" alt="" loading="lazy"></div>
     </a>'''
-CSS_V = 'v=8'
+CSS_V = 'v=9'
 JS_V = 'v=4'
 
 AREAS = ['Avinashi Road', 'Palladam Road', 'Kangeyam Road', 'Dharapuram Road', 'P.N. Road', 'Kumar Nagar',
@@ -142,6 +142,41 @@ TA = {
   'medicines': 'திருப்பூரில் மருந்து டெலிவரி – உரிமம் பெற்ற மருந்தகங்களிலிருந்து உங்கள் வீட்டிற்கு.',
   'groceries': 'திருப்பூரில் மளிகை பொருட்கள் டெலிவரி – தினசரி தேவைகள் உங்கள் வீட்டு வாசலுக்கு.',
 }
+
+SPELL = {  # other ways people spell / search the same restaurant
+    'Hotel Sri Surya': ['Hotel Surya', 'Hotel Sir Surya', 'Sri Surya Hotel'],
+    'Sasi Briyani Hotel': ['Sasi Biryani Hotel'],
+    'Dindigul Sri Alagappa Briyani': ['Dindigul Sri Alagappa Biryani'],
+    'Padayappa Chettinad Hotel': ['Padayappa Hotel'],
+}
+GLOBAL_SEARCHES = [
+    ('Food delivery in Tirupur', '/food-delivery-tirupur/'), ('Tirupur food delivery', '/food-delivery-tirupur/'),
+    ('Tirupur delivery service', '/'), ('Biryani delivery in Tirupur', '/biryani-delivery-tirupur/'),
+    ('Medicine delivery in Tirupur', '/medicine-delivery-tirupur/'), ('Medicine delivery near me', '/medicine-delivery-tirupur/'),
+    ('Parcel delivery in Tirupur', '/parcel-delivery-tirupur/'), ('Parcel delivery near me', '/parcel-delivery-tirupur/'),
+    ('Bus pickup delivery', '/parcel-delivery-tirupur/'), ('Grocery delivery in Tirupur', '/grocery-delivery-tirupur/'),
+    ('Restaurants that deliver in Tirupur', '/restaurants/'),
+]
+
+def searches_section(heading, items, cur=None):
+    lis = ''.join(
+        (f'<li><a href="{h}">{html.escape(t)}</a></li>' if h and h != cur else f'<li><span>{html.escape(t)}</span></li>')
+        for t, h in items)
+    return f'''<section class="sec searches-sec" id="searches" style="padding:8px 0 56px">
+  <div class="wrap">
+    <h2 style="font-size:clamp(22px,2.6vw,28px);margin-bottom:14px">{html.escape(heading)}</h2>
+    <ul class="tags">{lis}</ul>
+  </div>
+</section>'''
+
+def rest_searches(n, inf):
+    names = [n] + SPELL.get(n, [])
+    items = []
+    items += [f'{n} food delivery in Tirupur', f'Delivery from {n}', f'{n} home delivery', f'{n} near me']
+    for x in names[1:]:
+        items += [f'{x} food delivery in Tirupur', f'Delivery from {x}']
+    if inf: items.append(f'{n} {inf["area"]} delivery')
+    return [(t, None) for t in items]
 
 def areas_section(what, ta):
     chips = ''.join(f'<li>{a}</li>' for a in AREAS)
@@ -349,6 +384,8 @@ def page(key):
 {STEPS}
 
 {areas_section(s["name"].lower().replace(" delivery", "") + " delivery", TA[key])}
+
+{searches_section("Popular searches in Tirupur", GLOBAL_SEARCHES, path)}
 
 {faq_section(f'{s["name"]} in Tirupur: FAQs', s['faq'])}
 
@@ -568,6 +605,8 @@ def rest_page(r):
 </section>
 
 {STEPS}
+
+{searches_section(f'Looking for {n} delivery in Tirupur?', rest_searches(n, inf))}
 
 {faq_section(f'{n} delivery: FAQs', faq)}
 
