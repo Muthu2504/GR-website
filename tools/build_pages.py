@@ -171,7 +171,13 @@ def shell(*, title, desc, url, img, w, h, lds, wa, main, og_type='website'):
 <meta name="theme-color" content="#F45146">
 <meta name="geo.region" content="IN-TN">
 <meta name="geo.placename" content="Tirupur">
-<link rel="icon" href="/favicon.svg?v=4" type="image/svg+xml">
+<meta name="geo.position" content="11.1085;77.3411">
+<meta name="ICBM" content="11.1085, 77.3411">
+<link rel="icon" href="/favicon.svg?v=5" type="image/svg+xml">
+<link rel="icon" href="/favicon-48.png?v=5" type="image/png" sizes="48x48">
+<link rel="icon" href="/favicon-96.png?v=5" type="image/png" sizes="96x96">
+<link rel="icon" href="/favicon-192.png?v=5" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=5">
 <link rel="canonical" href="{url}">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="{og_type}">
@@ -563,7 +569,9 @@ def rest_page(r):
   </div>
 </section>'''
     title = f'{n} Delivery in Tirupur | Groods' if len(n) > 22 else f'{n} Home Delivery in Tirupur | Groods'
-    desc = f'{n}' + (f' ({ALSO[n]})' if n in ALSO else '') + ' home delivery in Tirupur' + (f' for {inf["style"]}' if inf else '') + '. Order on WhatsApp or call 90921 62170 and Groods brings your food to your door.'
+    desc = f'{n}' + (f' ({ALSO[n]})' if n in ALSO else '') + ' home delivery in Tirupur' + (f' for {inf["style"]}' if inf else '') + '. Order on WhatsApp or call 90921 62170: Groods picks up from the restaurant and delivers to your door, 11 am-3:30 pm and 6-10 pm.'
+    if len(desc) > 165:
+        desc = f'{n} home delivery in Tirupur. Order on WhatsApp or call 90921 62170: Groods picks up from the restaurant and delivers to your door, 11 am-3:30 pm and 6-10 pm.'
     return shell(title=title, desc=desc, url=url, img=r['img'].replace('/assets/', '', 1), w=480, h=360, lds=lds, wa=wa, main=main)
 
 def rest_index():
