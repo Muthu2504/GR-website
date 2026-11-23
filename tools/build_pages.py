@@ -129,7 +129,7 @@ PROMO = '''<a class="promo rv" href="/biryani-delivery-tirupur/">
       </div>
       <div class="promo-art" aria-hidden="true"><span class="promo-badge"><span><b>7</b>biryani spots</span></span><img src="/assets/rider-food.webp" width="373" height="543" alt="" loading="lazy"></div>
     </a>'''
-CSS_V = 'v=9'
+CSS_V = 'v=10'
 JS_V = 'v=4'
 
 AREAS = ['Avinashi Road', 'Palladam Road', 'Kangeyam Road', 'Dharapuram Road', 'P.N. Road', 'Kumar Nagar',
@@ -507,11 +507,20 @@ INFO = {
         dishes=['Grilled Chicken 20-20', 'Pepper Grill Chicken', 'Lemon Chicken Shawarma', 'Kerala Chicken Biryani', 'Kerala Mutton Biryani', 'Chicken Pollichathu', 'Prawns Tawa Fry']),
     'Padayappa Chettinad Hotel': dict(style='Chettinad-style non-veg dishes', area='Valipalayam', where='Valipalayam',
         dishes=['Padayappa Special Chicken', 'Mutton Sukka', 'Chicken Curry Dosa', 'Ghee Parotta', 'Egg Kudal', 'Non-Veg Meals']),
-    'Sandwich 99': dict(style='sandwiches, pasta and shakes', area='Rathinasabapathy Puram', where='Rathinasabapathy Puram, Court Street',
+    'Sandwich 99': dict(order_links=True, seo_title='Sandwich 99 Tirupur: Sandwich, Pasta & Shake Delivery | Groods',
+        seo_desc='Order Sandwich 99 (Rathinasabapathy Puram) in Tirupur: Chicken Peri Peri Sandwich, Paneer Sandwich, Alfredo Pasta, KitKat Shake. WhatsApp 90921 62170.',
+        extra_faq=[('Can I order a sandwich, pasta and a shake together from Sandwich 99?', 'Yes. Put everything you want in one WhatsApp message, for example a Chicken Peri Peri Sandwich, Chicken Alfredo Pasta and a KitKat Shake, and we pick it all up in one trip.'),
+                   ('Does Sandwich 99 have paneer or egg sandwiches?', 'Paneer Sandwich, Boiled Egg Masala Sandwich and Sweet Corn Chips Sandwich are among its popular items. Message us on WhatsApp and we will confirm what is available today.')],
+        style='sandwiches, pasta and shakes', area='Rathinasabapathy Puram', where='Rathinasabapathy Puram, Court Street',
         dishes=['Chicken Peri Peri Sandwich', 'Boiled Egg Masala Sandwich', 'Sweet Corn Chips Sandwich', 'Paneer Sandwich', 'Chicken Alfredo Pasta', 'KitKat Shake']),
     'Qasr Laban': dict(style='desserts and Arabic dishes', area='Padmavathi Puram', where='SAP Theatre Junction, Padmavathi Puram',
         dishes=['Pistachio Nutella Salankatia', 'Cheese Bomb', 'Kabsa', 'Pistachio Qashtuta', 'Kinder Heba Cake', 'Pistachio Koushri']),
 }
+
+def dish_li(n, d, inf):
+    if not inf.get('order_links'): return '<li>' + d + '</li>'
+    href = WA + quote(f'Hi Groods, I would like to order {d} from {n}.')
+    return f'<li>{d} · <a class="dish-order" href="{href}" target="_blank" rel="noopener" data-label="{n}: {d}">Order on WhatsApp</a></li>'
 
 def rest_page(r):
     n = r['name']; path = f"/restaurants/{r['slug']}/"; url = SITE + path
@@ -527,6 +536,8 @@ def rest_page(r):
     inf = INFO.get(n)
     if inf:
         faq.insert(0, (f'What is {n} known for?', f"{n} serves {inf['style']}. Popular orders include {', '.join(inf['dishes'][:-1])} and {inf['dishes'][-1]}. Based in {inf['where']}, Tirupur."))
+    if inf and inf.get('extra_faq'):
+        faq[1:1] = inf['extra_faq']
     same = [x for x in REST if x['group'] == r['group'] and x is not r]
     others = (same + [x for x in REST if x['group'] != r['group']])[:5]
     cards = '\n'.join(pcard(x) for x in others)
@@ -560,7 +571,7 @@ def rest_page(r):
       <span class="eyebrow">Partner restaurant</span>
       <h2>Order {n} without leaving home</h2>
       <p>{n} is one of Groods’ partner restaurants in Tirupur{(' and serves ' + inf['style']) if inf else ''}. {('Based in ' + inf['where'] + ', Tirupur.') if inf else ''} You don’t need an app or an account: just send us your order on WhatsApp or call us, and our rider brings it to your home or office.</p>
-      {('<h3>Popular orders from ' + n + '</h3><ul style="margin:8px 0 16px;padding-left:20px;list-style:disc">' + ''.join('<li>' + d + '</li>' for d in inf['dishes']) + '</ul>') if inf else ''}
+      {('<h3>Popular orders from ' + n + '</h3><ul style="margin:8px 0 16px;padding-left:20px;list-style:disc">' + ''.join(dish_li(n, d, inf) for d in inf['dishes']) + '</ul>') if inf else ''}
       <p>Want something from another restaurant too? Add it to the same message. See all <a class="inline" href="/restaurants/">restaurants that deliver in Tirupur</a> or read about our <a class="inline" href="/food-delivery-tirupur/">food delivery in Tirupur</a>.</p>
     </div>
     <div class="svc-box rv">
@@ -595,6 +606,8 @@ def rest_page(r):
     if len(desc) > 165:
         top = ', '.join(inf['dishes'][:3]) + '. ' if inf else ''
         desc = f'{n} ({inf["area"]}) home delivery in Tirupur: {top}Order on WhatsApp or call 90921 62170.' if inf else f'{n} home delivery in Tirupur. Order on WhatsApp or call 90921 62170: Groods picks up from the restaurant and delivers to your door, 11 am-3:30 pm and 6-10 pm.'
+    if inf and inf.get('seo_title'): title = inf['seo_title']
+    if inf and inf.get('seo_desc'): desc = inf['seo_desc']
     return shell(title=title, desc=desc, url=url, img=r['img'].replace('/assets/', '', 1), w=480, h=360, lds=lds, wa=wa, main=main)
 
 def rest_index():

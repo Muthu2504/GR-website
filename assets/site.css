@@ -405,3 +405,6 @@ li.pcard{list-style:none}
 .svc-body p a.inline{color:var(--brand-d);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 .pick h2 a:hover{color:var(--brand-d)}
 @media(max-width:960px){.hero-art.rest-art{min-height:0}.hero-art.rest-art img{height:auto}}
+
+.dish-order{color:var(--brand-d);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.dish-order:hover{color:var(--brand-btn)}
