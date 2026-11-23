@@ -32,7 +32,7 @@ def block(start, end):
     i = idx.index(start); j = idx.index(end, i) + len(end)
     return idx[i:j]
 
-GTAG = block('<!-- Google tag (gtag.js) -->', '</script>\n')
+GTAG = block('<!-- Google tag (gtag.js)', '</script>\n')
 SPRITE = block('<!-- icons -->', '</svg>\n\n<header')[:-len('\n\n<header')]
 CONTACT = block('<!-- CONTACT -->', '</section>')
 BAR = block('<!-- mobile sticky actions -->', '</dialog>')
@@ -127,8 +127,8 @@ PROMO = '''<a class="promo rv" href="/biryani-delivery-tirupur/">
       </div>
       <div class="promo-art" aria-hidden="true"><span class="promo-badge"><span><b>7</b>biryani spots</span></span><img src="/assets/rider-food.webp" width="373" height="543" alt="" loading="lazy"></div>
     </a>'''
-CSS_V = 'v=7'
-JS_V = 'v=3'
+CSS_V = 'v=8'
+JS_V = 'v=4'
 
 AREAS = ['Avinashi Road', 'Palladam Road', 'Kangeyam Road', 'Dharapuram Road', 'P.N. Road', 'Kumar Nagar',
          'Anupparpalayam', '15 Velampalayam', 'Veerapandi', 'Nallur', 'Rayapuram', 'Mannarai',
@@ -189,7 +189,8 @@ def shell(*, title, desc, url, img, w, h, lds, wa, main, og_type='website'):
 <meta name="twitter:image" content="{SITE}/assets/{img}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Funnel+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Funnel+Sans:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Funnel+Sans:wght@400;500;600&display=swap"></noscript>
 {lds}
 <link rel="stylesheet" href="/assets/site.css?{CSS_V}">
 </head>

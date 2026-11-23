@@ -3,8 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P4KWS13W73"></script>
+<!-- Google tag (gtag.js): config here, gtag.js itself is loaded late by assets/site.js -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -35,7 +34,8 @@
 <meta name="twitter:image" content="https://groods.in/assets/mascot-thumbs.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Funnel+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Funnel+Sans:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Funnel+Sans:wght@400;500;600&display=swap"></noscript>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"Groods","alternateName":["Groods Tirupur","Groods Delivery Service"],"url":"https://groods.in/"}
 </script>
@@ -45,7 +45,8 @@
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is there a home delivery service in Tirupur?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Groods is a local delivery service in Tirupur (Tiruppur). We deliver food from restaurants like Hotel Sri Surya and Sasi Briyani Hotel, and we also deliver parcels, medicines and groceries across the city. Order on WhatsApp or call 90 921 621 70."}}, {"@type": "Question", "name": "Do you do food delivery in Tirupur?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Groods delivers food from restaurants across Tirupur, including our partner restaurants like Junior Kuppanna, Sasi Briyani Hotel and The Biryani Theory. You can also ask us to pick up from any other restaurant of your choice."}}, {"@type": "Question", "name": "Can I get medicines delivered at home in Tirupur?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We pick up prescription and everyday medicines from licensed medical shops in Tirupur and bring them to your door."}}, {"@type": "Question", "name": "Do you offer parcel delivery within Tirupur?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We pick up and drop parcels, documents and packages anywhere across Tirupur city. Share the pickup and drop details and we will handle the rest."}}, {"@type": "Question", "name": "Do you deliver groceries in Tirupur?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Send us your grocery list and we will buy your daily essentials and fresh items from the shop and deliver them to your home."}}, {"@type": "Question", "name": "What are your delivery hours?", "acceptedAnswer": {"@type": "Answer", "text": "We deliver every day from 11:00 am to 3:30 pm and from 6:00 pm to 10:00 pm. You can message us outside these hours and we will reply as soon as we open."}}, {"@type": "Question", "name": "How do I place an order?", "acceptedAnswer": {"@type": "Answer", "text": "Message us on WhatsApp or call 90 921 621 70. Tell us what you need along with the pickup and drop details. No app or sign-up is needed."}}, {"@type": "Question", "name": "How much does delivery cost?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the distance and the order. We confirm the price with you before we pick anything up, so there are no surprises."}}, {"@type": "Question", "name": "How can I pay?", "acceptedAnswer": {"@type": "Answer", "text": "You can pay online or pay on delivery."}}]}
 </script>
-<link rel="stylesheet" href="/assets/site.css?v=7">
+<link rel="preload" as="image" href="/assets/mascot-thumbs.webp" fetchpriority="high" media="(min-width:0px)">
+<link rel="stylesheet" href="/assets/site.css?v=8">
 </head>
 <body class="no-js">
 <a class="skip" href="#what">Skip to content</a>
@@ -92,7 +93,7 @@
       <a class="hero-rate" href="#reviews"><span class="stars" aria-hidden="true">★★★★★</span><span><b>4.7</b> on Google · 91 reviews</span></a>
     </div>
     <div class="hero-art">
-      <img src="assets/mascot-thumbs.webp" width="669" height="900" alt="Groods delivery rider on a scooter">
+      <img src="assets/mascot-thumbs.webp" width="669" height="900" alt="Groods delivery rider on a scooter" fetchpriority="high" decoding="async">
       <span class="chip c1"><i><svg><use href="#i-food"/></svg></i>Food</span>
       <span class="chip c2"><i><svg><use href="#i-box"/></svg></i>Parcels</span>
       <span class="chip c3"><i><svg><use href="#i-pill"/></svg></i>Medicines</span>
@@ -224,25 +225,25 @@
       <div class="arrows"><button type="button" id="rPrev" aria-label="Previous reviews"><svg viewBox="0 0 24 24"><use href="#i-arrow" transform="rotate(180 12 12)"/></svg></button><button type="button" id="rNext" aria-label="Next reviews"><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></button></div>
     </div>
   </div>
-  <div class="rev-track" id="rTrack" tabindex="0" aria-label="Customer reviews, scroll sideways">
+  <div class="rev-track" id="rTrack" role="region" tabindex="0" aria-label="Customer reviews, scroll sideways">
       <figure class="rcard"><svg class="q" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 6C6.5 7 4 9.8 4 14v4h6v-6H7c.1-2 1.2-3.2 3.2-3.8zm9 0c-3 1-5.5 3.8-5.5 8v4h6v-6h-3c.1-2 1.2-3.2 3.2-3.8z"/></svg><blockquote>I’ve had an excellent experience with Prakash from GROODS. He was prompt, courteous, and very professional. For all my deliveries, Prakash delivered my order on time just like he promised.</blockquote>
-        <figcaption><span class="av" style="background:#F45146">S</span><span><b>Shivmithran Arunkumar</b><small>Google review</small></span></figcaption></figure>
+        <figcaption><span class="av" style="background:#D4382E">S</span><span><b>Shivmithran Arunkumar</b><small>Google review</small></span></figcaption></figure>
       <figure class="rcard"><svg class="q" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 6C6.5 7 4 9.8 4 14v4h6v-6H7c.1-2 1.2-3.2 3.2-3.8zm9 0c-3 1-5.5 3.8-5.5 8v4h6v-6h-3c.1-2 1.2-3.2 3.2-3.8z"/></svg><blockquote>The Cake and the flower delivery was on point. And it is very easy and comfortable talking to Pradeep. Very trustworthy and Professional. Best delivery service.</blockquote>
         <figcaption><span class="av" style="background:#2A2630">S</span><span><b>Sugi</b><small>Google review</small></span></figcaption></figure>
       <figure class="rcard"><svg class="q" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 6C6.5 7 4 9.8 4 14v4h6v-6H7c.1-2 1.2-3.2 3.2-3.8zm9 0c-3 1-5.5 3.8-5.5 8v4h6v-6h-3c.1-2 1.2-3.2 3.2-3.8z"/></svg><blockquote>They are the best delivery service in Tirupur. The only person I can trust with my cake delivery. They are so patient and they handle the cakes n desserts so carefully. They are always JUST IN TIME.</blockquote>
-        <figcaption><span class="av" style="background:#F45146">H</span><span><b>Hamsa Mugi</b><small>Google review</small></span></figcaption></figure>
+        <figcaption><span class="av" style="background:#D4382E">H</span><span><b>Hamsa Mugi</b><small>Google review</small></span></figcaption></figure>
       <figure class="rcard"><svg class="q" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 6C6.5 7 4 9.8 4 14v4h6v-6H7c.1-2 1.2-3.2 3.2-3.8zm9 0c-3 1-5.5 3.8-5.5 8v4h6v-6h-3c.1-2 1.2-3.2 3.2-3.8z"/></svg><blockquote>Been using their service for a long time and they don’t fail to deliver it right and on time. One great advantage is that they provide their service to any restaurants of your choice.</blockquote>
         <figcaption><span class="av" style="background:#2A2630">S</span><span><b>Sudhan Murugesan</b><small>Google review · Local Guide</small></span></figcaption></figure>
       <figure class="rcard"><svg class="q" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 6C6.5 7 4 9.8 4 14v4h6v-6H7c.1-2 1.2-3.2 3.2-3.8zm9 0c-3 1-5.5 3.8-5.5 8v4h6v-6h-3c.1-2 1.2-3.2 3.2-3.8z"/></svg><blockquote>Best Food Delivery Service. Each and Every Order they Deliver it on Time with Proper Executives without any damages. Really Loved their Service..</blockquote>
-        <figcaption><span class="av" style="background:#F45146">G</span><span><b>Gomath Vaikundam S</b><small>Google review</small></span></figcaption></figure>
+        <figcaption><span class="av" style="background:#D4382E">G</span><span><b>Gomath Vaikundam S</b><small>Google review</small></span></figcaption></figure>
       <figure class="rcard"><svg class="q" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 6C6.5 7 4 9.8 4 14v4h6v-6H7c.1-2 1.2-3.2 3.2-3.8zm9 0c-3 1-5.5 3.8-5.5 8v4h6v-6h-3c.1-2 1.2-3.2 3.2-3.8z"/></svg><blockquote>Phone calls were responded immediately, polite, service was excellent &amp; quick!</blockquote>
         <figcaption><span class="av" style="background:#2A2630">B</span><span><b>Bharathi Bhaskar</b><small>Google review</small></span></figcaption></figure>
       <figure class="rcard"><svg class="q" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 6C6.5 7 4 9.8 4 14v4h6v-6H7c.1-2 1.2-3.2 3.2-3.8zm9 0c-3 1-5.5 3.8-5.5 8v4h6v-6h-3c.1-2 1.2-3.2 3.2-3.8z"/></svg><blockquote>Best delivery service in Tirupur.</blockquote>
-        <figcaption><span class="av" style="background:#F45146">B</span><span><b>Balaji Anbu</b><small>Google review</small></span></figcaption></figure>
+        <figcaption><span class="av" style="background:#D4382E">B</span><span><b>Balaji Anbu</b><small>Google review</small></span></figcaption></figure>
       <figure class="rcard"><svg class="q" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 6C6.5 7 4 9.8 4 14v4h6v-6H7c.1-2 1.2-3.2 3.2-3.8zm9 0c-3 1-5.5 3.8-5.5 8v4h6v-6h-3c.1-2 1.2-3.2 3.2-3.8z"/></svg><blockquote>Very prompt service. Courteous staff. Highly recommend this team.</blockquote>
         <figcaption><span class="av" style="background:#2A2630">S</span><span><b>Senbagam</b><small>Google review</small></span></figcaption></figure>
       <figure class="rcard"><svg class="q" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 6C6.5 7 4 9.8 4 14v4h6v-6H7c.1-2 1.2-3.2 3.2-3.8zm9 0c-3 1-5.5 3.8-5.5 8v4h6v-6h-3c.1-2 1.2-3.2 3.2-3.8z"/></svg><blockquote>Groods save my so much of time. I LOVE GROODS. I like on time delivery. Thank you GROODS</blockquote>
-        <figcaption><span class="av" style="background:#F45146">P</span><span><b>P. ராஜசண்டிகேஸ்வரன்</b><small>Google review</small></span></figcaption></figure>
+        <figcaption><span class="av" style="background:#D4382E">P</span><span><b>P. ராஜசண்டிகேஸ்வரன்</b><small>Google review</small></span></figcaption></figure>
       <figure class="rcard"><svg class="q" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 6C6.5 7 4 9.8 4 14v4h6v-6H7c.1-2 1.2-3.2 3.2-3.8zm9 0c-3 1-5.5 3.8-5.5 8v4h6v-6h-3c.1-2 1.2-3.2 3.2-3.8z"/></svg><blockquote>Glad I found Groods, delivery was better than expected, Well Done.</blockquote>
         <figcaption><span class="av" style="background:#2A2630">V</span><span><b>Vinith S</b><small>Google review</small></span></figcaption></figure>
     <a class="rcard more-card" href="https://share.google/To2bdziSfGjPuQKso" target="_blank" rel="noopener"><b>Read all 91 reviews</b><span>on Google <svg style="width:18px;height:18px"><use href="#i-arrow"/></svg></span></a>
@@ -377,6 +378,6 @@
   </div>
 </dialog>
 
-<script src="/assets/site.js?v=3"></script>
+<script src="/assets/site.js?v=4"></script>
 </body>
 </html>
