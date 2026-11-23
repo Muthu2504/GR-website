@@ -158,17 +158,6 @@ GLOBAL_SEARCHES = [
     ('Restaurants that deliver in Tirupur', '/restaurants/'),
 ]
 
-def searches_section(heading, items, cur=None):
-    lis = ''.join(
-        (f'<li><a href="{h}">{html.escape(t)}</a></li>' if h and h != cur else f'<li><span>{html.escape(t)}</span></li>')
-        for t, h in items)
-    return f'''<section class="sec searches-sec" id="searches" style="padding:8px 0 56px">
-  <div class="wrap">
-    <h2 style="font-size:clamp(22px,2.6vw,28px);margin-bottom:14px">{html.escape(heading)}</h2>
-    <ul class="tags">{lis}</ul>
-  </div>
-</section>'''
-
 def rest_searches(n, inf):
     names = [n] + SPELL.get(n, [])
     items = []
@@ -176,7 +165,7 @@ def rest_searches(n, inf):
     for x in names[1:]:
         items += [f'{x} food delivery in Tirupur', f'Delivery from {x}']
     if inf: items.append(f'{n} {inf["area"]} delivery')
-    return [(t, None) for t in items]
+    return items
 
 def areas_section(what, ta):
     chips = ''.join(f'<li>{a}</li>' for a in AREAS)
@@ -327,6 +316,7 @@ def page(key):
     trail = [('Home', '/'), (f'{s["name"]} in Tirupur', path)]
     lds = [
       {"@context":"https://schema.org","@type":"Service","name":f'{s["name"]} in Tirupur',"serviceType":s['name'],"description":s['desc'],"url":url,
+       "alternateName":[t for t,h in GLOBAL_SEARCHES if h == path],
        "areaServed":CITY,"provider":{"@type":"LocalBusiness","@id":f"{SITE}/#business","name":"Groods","telephone":"+919092162170","url":f"{SITE}/"}},
       crumb_ld(trail), faq_ld(s['faq'])]
     points = '\n'.join(f'          <li><span class="tick"><svg><use href="#i-check"/></svg></span><div><b>{html.escape(b)}</b><span>{html.escape(t)}</span></div></li>' for b,t in s['points'])
@@ -384,8 +374,6 @@ def page(key):
 {STEPS}
 
 {areas_section(s["name"].lower().replace(" delivery", "") + " delivery", TA[key])}
-
-{searches_section("Popular searches in Tirupur", GLOBAL_SEARCHES, path)}
 
 {faq_section(f'{s["name"]} in Tirupur: FAQs', s['faq'])}
 
@@ -560,7 +548,7 @@ def rest_page(r):
     others = (same + [x for x in REST if x['group'] != r['group']])[:5]
     cards = '\n'.join(pcard(x) for x in others)
     lds = [
-      {"@context":"https://schema.org","@type":"Service","name":f"{n} home delivery in Tirupur","serviceType":"Food delivery",
+      {"@context":"https://schema.org","@type":"Service","name":f"{n} home delivery in Tirupur","serviceType":"Food delivery","alternateName":rest_searches(n, inf),
        "description":f"Home delivery of food from {n} in Tirupur by Groods.","url":url,"areaServed":CITY,
        "provider":{"@type":"LocalBusiness","@id":f"{SITE}/#business","name":"Groods","telephone":"+919092162170","url":f"{SITE}/"}},
       crumb_ld(trail), faq_ld(faq)]
@@ -605,8 +593,6 @@ def rest_page(r):
 </section>
 
 {STEPS}
-
-{searches_section(f'Looking for {n} delivery in Tirupur?', rest_searches(n, inf))}
 
 {faq_section(f'{n} delivery: FAQs', faq)}
 
