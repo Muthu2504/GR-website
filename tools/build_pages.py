@@ -471,38 +471,38 @@ def pcard(x, indent='      '):
 #       note = one sentence unique to this restaurant. Only fill in what is TRUE;
 #       a restaurant with no entry gets a plainer page. Edit here, then rebuild.
 INFO = {
-    'Sasi Briyani Hotel': dict(style='Tamil-style biryani', dishes=['Chicken biryani', 'Mutton biryani', 'Egg biryani'],
-        note='A biryani-first menu, so it is the one to pick when the whole table wants biryani.'),
-    'Chettiar Kadai': dict(style='Chettinad-style non-veg food', dishes=['Chettinad chicken', 'Chicken biryani', 'Pepper fry'],
-        note='Known for the peppery, spice-rich flavours of Chettinad cooking.'),
-    'Padayappa Chettinad Hotel': dict(style='Chettinad-style meals and biryani', dishes=['Chettinad chicken', 'Mutton gravy', 'Biryani'],
-        note='A Chettinad menu with strong pepper and masala flavours.'),
-    'Junior Kuppanna': dict(style='Kongu and Tamil non-veg meals', dishes=['Meals', 'Mutton biryani', 'Chicken fry'],
-        note='A full non-veg Tamil menu, good for a proper sit-down style meal at home.'),
-    'Dindigul Sri Alagappa Briyani': dict(style='Dindigul-style biryani', dishes=['Mutton biryani', 'Chicken biryani', 'Chicken 65'],
-        note='Dindigul-style biryani, usually made with seeraga samba rice.'),
-    'Udumalai Mess': dict(style='mess-style Tamil meals', dishes=['Meals', 'Non-veg gravies', 'Fry items'],
-        note='Simple, home-style mess food for an everyday lunch or dinner.'),
-    'The Biryani Theory': dict(style='biryani', dishes=['Chicken biryani', 'Mutton biryani', 'Veg biryani'],
-        note='A biryani-focused menu with a few sides.'),
-    'The Bay Grill': dict(style='grills and main course', dishes=['Grilled chicken', 'Biryani', 'Starters'],
-        note='A good pick when you want grilled items along with a main course.'),
-    'Aroma': dict(style='North and South Indian food, paneer dishes and thalis', dishes=['Golden Fry Baby Corn', 'Ginger Garlic Paneer', 'Paneer Manchurian', 'Malai Kofta', 'Punjabi Malai Paneer', 'Tandoori rotis and parathas', 'South and North Indian thalis'],
-        note='Found on Kumaran Road, Valipalayam, Tirupur.'),
-    'Four Monkeys': dict(style='Tamil-style chicken dishes and dosa', dishes=['Chicken Pichupota Kari', 'Chicken Velayudhampalayam', 'Chicken Sivakasi', 'Ghee Roast Chicken', 'Mushroom Sivakasi', 'Paneer Masala Dosa'],
-        note='Found on College Road, Tirupur.'),
-    'Hotel Maniam Classic': dict(style='Tamil non-veg dishes and parotta', dishes=['Nattu Kozhi Varuval', 'Mutton Satti Soru', 'Mutton Chettinad', 'Chicken Varutha Kari with Bun Parotta', 'Crab Soup', 'Kalmi Kebab'],
-        note='Found on Kumaran Road, Valipalayam, Tirupur.'),
-    'Hotel New Mohan': dict(style='parotta and chicken gravy dishes', dishes=['Bucket Chicken Gravy', 'Kothu Parotta', 'Special Egg Parotta', 'Bun Parotta', 'Chilli Chicken', 'Pepper Chicken Leg'],
-        note='Found on Mangalam Road, Karuvampalayam, Tirupur.'),
-    'Hotel Sri Surya': dict(style='biryani, parotta and Tamil non-veg dishes', dishes=['Bun Parotta', 'Mutton Biryani', 'Chicken Biryani', 'Pichipotta Nattu Kozhi', 'Mutton Kola Urundai', 'Elaneer (tender coconut) Payasam'],
-        note='Found on Avinashi Main Road and Mangalam Road, Tirupur.'),
-    'The Kitchen Drama': dict(style='chicken dishes, kari dosa and parotta', dishes=['Tirupur Chicken', 'Honey Chicken', 'Chicken Kari Dosa', 'Mutton Kari Dosa', 'Nool Parotta', 'Chicken Stuffed Paratha'],
-        note='Found on Kumaran Road and Park Road, Valipalayam, Tirupur.'),
-    'Sandwich 99': dict(style='sandwiches', dishes=['Veg sandwich', 'Grilled sandwich', 'Pizza'],
-        note='Quick snacks and sandwiches, easy to add to a bigger order.'),
-    'Qasr Laban': dict(style='desserts and drinks', dishes=['Desserts', 'Milk-based sweets', 'Cold drinks'],
-        note='A dessert stop for after-dinner cravings or a sweet treat.'),
+    'Aroma': dict(style='North and South Indian food, paneer dishes and thalis', area='Valipalayam', where='Kumaran Road, Valipalayam',
+        dishes=['Golden Fry Baby Corn', 'Ginger Garlic Paneer', 'Paneer Manchurian', 'Malai Kofta', 'Punjabi Malai Paneer', 'Tandoori rotis and parathas', 'South and North Indian thalis']),
+    'Four Monkeys': dict(style='Tamil-style chicken dishes and dosa', area='College Road', where='College Road',
+        dishes=['Chicken Pichupota Kari', 'Chicken Velayudhampalayam', 'Chicken Sivakasi', 'Ghee Roast Chicken', 'Mushroom Sivakasi', 'Paneer Masala Dosa']),
+    'Hotel Maniam Classic': dict(style='Tamil non-veg dishes and parotta', area='Valipalayam', where='Kumaran Road, Valipalayam',
+        dishes=['Nattu Kozhi Varuval', 'Mutton Satti Soru', 'Mutton Chettinad', 'Chicken Varutha Kari with Bun Parotta', 'Crab Soup', 'Kalmi Kebab']),
+    'Hotel New Mohan': dict(style='parotta and chicken gravy dishes', area='Karuvampalayam', where='Mangalam Road, Karuvampalayam',
+        dishes=['Bucket Chicken Gravy', 'Kothu Parotta', 'Special Egg Parotta', 'Bun Parotta', 'Chilli Chicken', 'Pepper Chicken Leg']),
+    'Hotel Sri Surya': dict(style='biryani, parotta and Tamil non-veg dishes', area='Avinashi Road', where='Avinashi Main Road and Mangalam Road',
+        dishes=['Bun Parotta', 'Mutton Biryani', 'Chicken Biryani', 'Pichipotta Nattu Kozhi', 'Mutton Kola Urundai', 'Elaneer (tender coconut) Payasam']),
+    'The Kitchen Drama': dict(style='chicken dishes, kari dosa and parotta', area='Valipalayam', where='Kumaran Road and Park Road, Valipalayam',
+        dishes=['Tirupur Chicken', 'Honey Chicken', 'Chicken Kari Dosa', 'Mutton Kari Dosa', 'Nool Parotta', 'Chicken Stuffed Paratha']),
+    'Sasi Briyani Hotel': dict(style='biryani and parotta', area='Ram Nagar', where='Ram Nagar',
+        dishes=['Mutton Biryani', 'Chicken Biryani', 'Bun Parotta', 'Ceylon Parotta', 'Egg Veechu Parotta', 'Chicken Lollipop']),
+    'Chettiar Kadai': dict(style='chicken dishes and parotta', area='Kannipiran Colony', where='Kannipiran Colony, near Binny Compound',
+        dishes=['Chicken Dynamite', 'Japan Chicken', 'Hot Pepper Chicken', 'Bangalore Chicken', 'Bun Parotta', 'Ghee Rice with Chicken Thokku']),
+    'Junior Kuppanna': dict(style='biryani and non-veg meals', area='College Road', where='College Road and Palladam-Mangalam Road',
+        dishes=['Mutton Biryani', 'Vazha Ilai Chicken Biryani', 'Non-Veg Meals', 'Chicken Pallipalayam', 'Mutton Chukka', 'Japan Chicken', 'Attukal Soup']),
+    'Dindigul Sri Alagappa Briyani': dict(style='biryani and chicken starters', area='Velampalayam', where='Velampalayam, P.N. Road',
+        dishes=['Mutton Biryani', 'Chicken Biryani', 'Chicken 777', 'Chicken Lollipop', 'Chettinadu Chicken', 'Elaneer Payasam']),
+    'Udumalai Mess': dict(style='non-veg meals and fry dishes', area='Odakkadu', where='Stanes Road, Odakkadu',
+        dishes=['Non-Veg Meals', 'Mutton Fry', 'Mutton Thokku', 'Fish Fry', 'Hot Pepper Chicken', 'Chilli Chicken']),
+    'The Biryani Theory': dict(style='biryani', area='Vasantham Nagar', where='Vasantham Nagar',
+        dishes=['Dindigul Chicken Biryani', 'Ambur Chicken Biryani', 'Mutton Biryani', 'Chicken Chukka', 'Boneless Chicken 65', 'Bread Halwa']),
+    'The Bay Grill': dict(style='grills, shawarma and biryani', area='Kangayam Road', where='Kangayam Road and Avinashi-Tiruppur Road',
+        dishes=['Grilled Chicken 20-20', 'Pepper Grill Chicken', 'Lemon Chicken Shawarma', 'Kerala Chicken Biryani', 'Kerala Mutton Biryani', 'Chicken Pollichathu', 'Prawns Tawa Fry']),
+    'Padayappa Chettinad Hotel': dict(style='Chettinad-style non-veg dishes', area='Valipalayam', where='Valipalayam',
+        dishes=['Padayappa Special Chicken', 'Mutton Sukka', 'Chicken Curry Dosa', 'Ghee Parotta', 'Egg Kudal', 'Non-Veg Meals']),
+    'Sandwich 99': dict(style='sandwiches, pasta and shakes', area='Rathinasabapathy Puram', where='Rathinasabapathy Puram, Court Street',
+        dishes=['Chicken Peri Peri Sandwich', 'Boiled Egg Masala Sandwich', 'Sweet Corn Chips Sandwich', 'Paneer Sandwich', 'Chicken Alfredo Pasta', 'KitKat Shake']),
+    'Qasr Laban': dict(style='desserts and Arabic dishes', area='Padmavathi Puram', where='SAP Theatre Junction, Padmavathi Puram',
+        dishes=['Pistachio Nutella Salankatia', 'Cheese Bomb', 'Kabsa', 'Pistachio Qashtuta', 'Kinder Heba Cake', 'Pistachio Koushri']),
 }
 
 def rest_page(r):
@@ -518,7 +518,7 @@ def rest_page(r):
     ]
     inf = INFO.get(n)
     if inf:
-        faq.insert(0, (f'What is {n} known for?', f"{n} serves {inf['style']}. Popular orders include {', '.join(inf['dishes'][:-1])} and {inf['dishes'][-1]}. {inf['note']}"))
+        faq.insert(0, (f'What is {n} known for?', f"{n} serves {inf['style']}. Popular orders include {', '.join(inf['dishes'][:-1])} and {inf['dishes'][-1]}. Based in {inf['where']}, Tirupur."))
     same = [x for x in REST if x['group'] == r['group'] and x is not r]
     others = (same + [x for x in REST if x['group'] != r['group']])[:5]
     cards = '\n'.join(pcard(x) for x in others)
@@ -531,7 +531,7 @@ def rest_page(r):
   <div class="wrap hero-grid">
     <div class="hero-copy">
       {crumbs(trail)}
-      <span class="eyebrow"><span class="pulse"></span>{html.escape(r['group'])} · Tirupur</span>
+      <span class="eyebrow"><span class="pulse"></span>{html.escape(r['group'])} · {html.escape(inf['area'] + ', ') if inf else ''}Tirupur</span>
       <h1>{n} <em>home delivery in Tirupur</em></h1>
       <p class="lead">Craving {n}{alt}? Order on WhatsApp and Groods will pick up your food from {n} and deliver it to your door anywhere in Tirupur.</p>
       <div class="cta-row" id="heroCta">
@@ -551,7 +551,7 @@ def rest_page(r):
     <div class="rv">
       <span class="eyebrow">Partner restaurant</span>
       <h2>Order {n} without leaving home</h2>
-      <p>{n} is one of Groods’ partner restaurants in Tirupur{(' and serves ' + inf['style']) if inf else ''}. {inf['note'] if inf else ''} You don’t need an app or an account: just send us your order on WhatsApp or call us, and our rider brings it to your home or office.</p>
+      <p>{n} is one of Groods’ partner restaurants in Tirupur{(' and serves ' + inf['style']) if inf else ''}. {('Based in ' + inf['where'] + ', Tirupur.') if inf else ''} You don’t need an app or an account: just send us your order on WhatsApp or call us, and our rider brings it to your home or office.</p>
       {('<h3>Popular orders from ' + n + '</h3><ul style="margin:8px 0 16px;padding-left:20px;list-style:disc">' + ''.join('<li>' + d + '</li>' for d in inf['dishes']) + '</ul>') if inf else ''}
       <p>Want something from another restaurant too? Add it to the same message. See all <a class="inline" href="/restaurants/">restaurants that deliver in Tirupur</a> or read about our <a class="inline" href="/food-delivery-tirupur/">food delivery in Tirupur</a>.</p>
     </div>
@@ -581,10 +581,12 @@ def rest_page(r):
   </div>
 </section>'''
     title = f'{n} Delivery in Tirupur | Groods' if len(n) > 22 else f'{n} Home Delivery in Tirupur | Groods'
+    if inf and len(f'{n}, {inf["area"]}: Delivery in Tirupur | Groods') <= 62:
+        title = f'{n}, {inf["area"]}: Delivery in Tirupur | Groods'
     desc = f'{n}' + (f' ({ALSO[n]})' if n in ALSO else '') + ' home delivery in Tirupur' + (f' for {inf["style"]}' if inf else '') + '. Order on WhatsApp or call 90921 62170: Groods picks up from the restaurant and delivers to your door, 11 am-3:30 pm and 6-10 pm.'
     if len(desc) > 165:
         top = ', '.join(inf['dishes'][:3]) + '. ' if inf else ''
-        desc = f'{n} home delivery in Tirupur: {top}Order on WhatsApp or call 90921 62170 and Groods delivers to your door.' if inf else f'{n} home delivery in Tirupur. Order on WhatsApp or call 90921 62170: Groods picks up from the restaurant and delivers to your door, 11 am-3:30 pm and 6-10 pm.'
+        desc = f'{n} ({inf["area"]}) home delivery in Tirupur: {top}Order on WhatsApp or call 90921 62170.' if inf else f'{n} home delivery in Tirupur. Order on WhatsApp or call 90921 62170: Groods picks up from the restaurant and delivers to your door, 11 am-3:30 pm and 6-10 pm.'
     return shell(title=title, desc=desc, url=url, img=r['img'].replace('/assets/', '', 1), w=480, h=360, lds=lds, wa=wa, main=main)
 
 def rest_index():
