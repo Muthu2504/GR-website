@@ -487,6 +487,18 @@ INFO = {
         note='A biryani-focused menu with a few sides.'),
     'The Bay Grill': dict(style='grills and main course', dishes=['Grilled chicken', 'Biryani', 'Starters'],
         note='A good pick when you want grilled items along with a main course.'),
+    'Aroma': dict(style='North and South Indian food, paneer dishes and thalis', dishes=['Golden Fry Baby Corn', 'Ginger Garlic Paneer', 'Paneer Manchurian', 'Malai Kofta', 'Punjabi Malai Paneer', 'Tandoori rotis and parathas', 'South and North Indian thalis'],
+        note='Found on Kumaran Road, Valipalayam, Tirupur.'),
+    'Four Monkeys': dict(style='Tamil-style chicken dishes and dosa', dishes=['Chicken Pichupota Kari', 'Chicken Velayudhampalayam', 'Chicken Sivakasi', 'Ghee Roast Chicken', 'Mushroom Sivakasi', 'Paneer Masala Dosa'],
+        note='Found on College Road, Tirupur.'),
+    'Hotel Maniam Classic': dict(style='Tamil non-veg dishes and parotta', dishes=['Nattu Kozhi Varuval', 'Mutton Satti Soru', 'Mutton Chettinad', 'Chicken Varutha Kari with Bun Parotta', 'Crab Soup', 'Kalmi Kebab'],
+        note='Found on Kumaran Road, Valipalayam, Tirupur.'),
+    'Hotel New Mohan': dict(style='parotta and chicken gravy dishes', dishes=['Bucket Chicken Gravy', 'Kothu Parotta', 'Special Egg Parotta', 'Bun Parotta', 'Chilli Chicken', 'Pepper Chicken Leg'],
+        note='Found on Mangalam Road, Karuvampalayam, Tirupur.'),
+    'Hotel Sri Surya': dict(style='biryani, parotta and Tamil non-veg dishes', dishes=['Bun Parotta', 'Mutton Biryani', 'Chicken Biryani', 'Pichipotta Nattu Kozhi', 'Mutton Kola Urundai', 'Elaneer (tender coconut) Payasam'],
+        note='Found on Avinashi Main Road and Mangalam Road, Tirupur.'),
+    'The Kitchen Drama': dict(style='chicken dishes, kari dosa and parotta', dishes=['Tirupur Chicken', 'Honey Chicken', 'Chicken Kari Dosa', 'Mutton Kari Dosa', 'Nool Parotta', 'Chicken Stuffed Paratha'],
+        note='Found on Kumaran Road and Park Road, Valipalayam, Tirupur.'),
     'Sandwich 99': dict(style='sandwiches', dishes=['Veg sandwich', 'Grilled sandwich', 'Pizza'],
         note='Quick snacks and sandwiches, easy to add to a bigger order.'),
     'Qasr Laban': dict(style='desserts and drinks', dishes=['Desserts', 'Milk-based sweets', 'Cold drinks'],
@@ -571,7 +583,8 @@ def rest_page(r):
     title = f'{n} Delivery in Tirupur | Groods' if len(n) > 22 else f'{n} Home Delivery in Tirupur | Groods'
     desc = f'{n}' + (f' ({ALSO[n]})' if n in ALSO else '') + ' home delivery in Tirupur' + (f' for {inf["style"]}' if inf else '') + '. Order on WhatsApp or call 90921 62170: Groods picks up from the restaurant and delivers to your door, 11 am-3:30 pm and 6-10 pm.'
     if len(desc) > 165:
-        desc = f'{n} home delivery in Tirupur. Order on WhatsApp or call 90921 62170: Groods picks up from the restaurant and delivers to your door, 11 am-3:30 pm and 6-10 pm.'
+        top = ', '.join(inf['dishes'][:3]) + '. ' if inf else ''
+        desc = f'{n} home delivery in Tirupur: {top}Order on WhatsApp or call 90921 62170 and Groods delivers to your door.' if inf else f'{n} home delivery in Tirupur. Order on WhatsApp or call 90921 62170: Groods picks up from the restaurant and delivers to your door, 11 am-3:30 pm and 6-10 pm.'
     return shell(title=title, desc=desc, url=url, img=r['img'].replace('/assets/', '', 1), w=480, h=360, lds=lds, wa=wa, main=main)
 
 def rest_index():
