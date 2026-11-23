@@ -129,7 +129,7 @@ PROMO = '''<a class="promo rv" href="/biryani-delivery-tirupur/">
       </div>
       <div class="promo-art" aria-hidden="true"><span class="promo-badge"><span><b>7</b>biryani spots</span></span><img src="/assets/rider-food.webp" width="373" height="543" alt="" loading="lazy"></div>
     </a>'''
-CSS_V = 'v=10'
+CSS_V = 'v=11'
 JS_V = 'v=4'
 
 AREAS = ['Avinashi Road', 'Palladam Road', 'Kangeyam Road', 'Dharapuram Road', 'P.N. Road', 'Kumar Nagar',
@@ -681,8 +681,8 @@ def order_page():
     <span class="eyebrow"><span class="pulse"></span>Order in Tirupur</span>
     <h1>Order food, parcels, medicines and groceries <em>on WhatsApp</em></h1>
     <p class="lead">No app and no sign-up. Pick what you need, send us a message, and our rider brings it to your door anywhere in Tirupur. We confirm the price first, and you can pay online or on delivery.</p>
-    <div class="cta-row" id="heroCta">{svc}</div>
-    <div class="cta-row" style="margin-top:0">
+    <div class="order-grid" id="heroCta">
+      {svc}
       <a class="btn btn-call btn-lg" href="tel:+919092162170"><svg><use href="#i-phone"/></svg>Or call 90 921 621 70</a>
     </div>
   </div>

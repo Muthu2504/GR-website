@@ -408,3 +408,9 @@ li.pcard{list-style:none}
 
 .dish-order{color:var(--brand-d);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 .dish-order:hover{color:var(--brand-btn)}
+
+/* order page: even 2x2 button grid, call button full width underneath */
+.order-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:520px;margin:32px 0 8px}
+.order-grid .btn{width:100%}
+.order-grid .btn-call{grid-column:1/-1}
+@media (max-width:420px){.order-grid{grid-template-columns:1fr}}
