@@ -32,7 +32,7 @@ def block(start, end):
     i = idx.index(start); j = idx.index(end, i) + len(end)
     return idx[i:j]
 
-GTAG = block('<!-- Google tag (gtag.js)', '</script>\n')
+GTAG = block('<!-- Google Tag Manager -->', '<!-- End Google Tag Manager -->\n')
 SPRITE = block('<!-- icons -->', '</svg>\n\n<header')[:-len('\n\n<header')]
 CONTACT = block('<!-- CONTACT -->', '</section>')
 BAR = block('<!-- mobile sticky actions -->', '</dialog>')
@@ -130,7 +130,7 @@ PROMO = '''<a class="promo rv" href="/biryani-delivery-tirupur/">
       <div class="promo-art" aria-hidden="true"><span class="promo-badge"><span><b>7</b>biryani spots</span></span><img src="/assets/rider-food.webp" width="373" height="543" alt="" loading="lazy"></div>
     </a>'''
 CSS_V = 'v=11'
-JS_V = 'v=4'
+JS_V = 'v=5'
 
 AREAS = ['Avinashi Road', 'Palladam Road', 'Kangeyam Road', 'Dharapuram Road', 'P.N. Road', 'Kumar Nagar',
          'Anupparpalayam', '15 Velampalayam', 'Veerapandi', 'Nallur', 'Rayapuram', 'Mannarai',

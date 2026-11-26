@@ -60,10 +60,3 @@ document.querySelectorAll('.faq').forEach(function(list){
   },true);
 });
 
-/* Load gtag.js late (first interaction, or 4s after load) so it never competes with first paint */
-(function(){
-  var done=false;
-  function load(){if(done)return;done=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-P4KWS13W73';document.head.appendChild(s)}
-  ['pointerdown','keydown','scroll','touchstart'].forEach(function(t){addEventListener(t,load,{once:true,passive:true})});
-  addEventListener('load',function(){setTimeout(load,4000)});
-})();
